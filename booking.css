@@ -1,0 +1,1067 @@
+/* =====================================
+   RAILEASY BOOKING SYSTEM
+===================================== */
+
+.booking-page {
+    font-family: Arial, sans-serif;
+    background: #ffffff;
+    color: #25384a;
+}
+
+/* HIDE INACTIVE BOOKING SCREENS */
+.book-screen[hidden] {
+    display: none !important;
+}
+
+/* =====================================
+   BUTTONS
+===================================== */
+
+.booking-page .book-btn {
+    display: inline-block;
+    padding: 10px 18px;
+    background: #34699e;
+    color: white;
+    border: 0;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    box-shadow: 0 2px 4px #0003;
+}
+
+.booking-page .book-btn:hover {
+    background: #235784;
+    color: white;
+}
+
+.booking-page .book-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.booking-page .book-btn-light {
+    background: #66a5c3;
+    border: 1px solid #37698a;
+}
+
+.booking-page .book-btn-light:hover {
+    background: #5295b5;
+}
+
+.booking-page .book-btn-gray {
+    background: #a2a2a2;
+}
+
+.booking-page .book-btn-gray:hover {
+    background: #858585;
+}
+
+.booking-page .book-btn-wide {
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.booking-page .book-error {
+    background: #fff2f2;
+    color: #ae2525;
+    padding: 9px;
+    border-radius: 5px;
+    font-size: 12px;
+    margin: 10px 0;
+}
+
+.booking-page .book-error[hidden] {
+    display: none;
+}
+
+/* =====================================
+   SEARCH AND MAP HERO
+===================================== */
+
+.booking-hero {
+    position: relative;
+    isolation: isolate;
+    padding: 58px 0;
+    min-height: 445px;
+}
+
+.booking-hero::before {
+    content: "";
+    position: absolute;
+    inset: -9px;
+    z-index: -2;
+
+    background:
+        url("images/train.jpg")
+        center / cover no-repeat;
+
+    filter: blur(3px);
+    transform: scale(1.02);
+}
+
+.booking-hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: rgba(7, 24, 43, 0.64);
+}
+
+.booking-hero-grid {
+    display: grid;
+    grid-template-columns:
+        minmax(0, 1fr)
+        minmax(0, 1fr);
+
+    gap: clamp(20px, 5vw, 80px);
+    max-width: 1060px;
+    align-items: center;
+}
+
+/* SEARCH FORM CARD */
+.booking-search-card {
+    min-height: 355px;
+    padding: 28px 27px;
+    background: #34699e;
+    color: white;
+    border: 1px solid #92bfe0;
+    border-radius: 13px;
+    box-shadow: 0 5px 9px #0003;
+}
+
+.booking-search-card h1 {
+    font-size: 29px;
+    line-height: 1.05;
+    font-weight: 800;
+    margin-bottom: 11px;
+    color: white;
+}
+
+.booking-search-card > p {
+    font-size: 12px;
+    line-height: 1.45;
+    margin-bottom: 16px;
+    color: #e9f5ff;
+}
+
+.search-form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 17px 20px;
+}
+
+.search-form-grid label {
+    font-size: 12px;
+    font-weight: 600;
+    color: white;
+}
+
+.search-form-grid select,
+.search-form-grid input {
+    display: block;
+    width: 100%;
+    height: 37px;
+    margin-top: 5px;
+    padding: 6px 8px;
+    background: white;
+    color: #35465a;
+    border: 1px solid #d6e2eb;
+    border-radius: 5px;
+    font-size: 12px;
+}
+
+.booking-search-card .book-btn {
+    display: block;
+    width: 62%;
+    margin: 27px auto 0;
+}
+
+/* =====================================
+   MAP
+===================================== */
+
+.booking-map {
+    position: relative;
+    min-height: 355px;
+    background: #e5f4fc;
+    border-radius: 13px;
+    overflow: hidden;
+    box-shadow: 0 3px 9px #0003;
+}
+
+.booking-map iframe {
+    display: block;
+    width: 100%;
+    height: 355px;
+    border: 0;
+}
+
+.map-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255,255,249,0.9);
+    padding: 5px 8px;
+    text-align: center;
+    font-size: 10px;
+    color: #355674;
+    pointer-events: none;
+}
+
+/* =====================================
+   AVAILABLE TRAIN SCHEDULES
+===================================== */
+
+.schedule-results {
+    padding: 50px 15px 85px;
+    min-height: 440px;
+    text-align: center;
+}
+
+.schedule-results h2,
+.screen-heading {
+    color: #34699e;
+    font-size: 26px;
+    font-weight: 750;
+    text-align: center;
+}
+
+.route-summary {
+    display: inline-block;
+    padding: 9px 20px;
+    margin: 13px auto 35px;
+    border: 1px solid #abb7c1;
+    border-radius: 12px;
+    font-size: 13px;
+    color: #4d5259;
+    background: white;
+}
+
+.schedule-card-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px 62px;
+    max-width: 890px;
+    margin: 0 auto;
+}
+
+/* SCHEDULE CARDS */
+.schedule-card {
+    background: white;
+    border: 1px solid #989898;
+    border-radius: 11px;
+    overflow: hidden;
+    text-align: left;
+    box-shadow: 0 3px 4px #0002;
+}
+
+.schedule-card-header {
+    background: #34699e;
+    color: white;
+    padding: 9px 12px;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.schedule-card-body {
+    padding: 15px 16px 12px;
+}
+
+.schedule-card-route {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.schedule-card-route .end-time {
+    text-align: right;
+}
+
+.schedule-card-route strong {
+    display: block;
+    color: #212c34;
+    font-size: 17px;
+}
+
+.schedule-card-route small {
+    font-size: 11px;
+    color: #34699e;
+}
+
+.route-arrow {
+    font-size: 24px;
+    color: #4388c1;
+}
+
+.schedule-card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 12px;
+    font-size: 11px;
+    color: #333;
+}
+
+.schedule-card-footer .book-btn {
+    background: #66a6c6;
+    font-size: 11px;
+    padding: 7px 12px;
+}
+
+.demo-disclaimer {
+    color: #71818d;
+    font-size: 11px;
+    max-width: 630px;
+    margin: 20px auto;
+}
+
+.no-schedules {
+    grid-column: 1 / -1;
+    padding: 35px 20px;
+    border: 1px solid #d5dfe7;
+    border-radius: 8px;
+    color: #667485;
+}
+
+/* =====================================
+   SELECTED TRAIN DETAILS
+===================================== */
+
+.simple-screen {
+    min-height: 490px;
+    padding: 35px 15px 75px;
+    position: relative;
+}
+
+.simple-screen .container {
+    position: relative;
+}
+
+.back-arrow {
+    position: absolute;
+    left: 2%;
+    top: 0;
+    background: transparent;
+    color: #34699e;
+    border: none;
+    font-size: 26px;
+    cursor: pointer;
+}
+
+.screen-heading {
+    margin: 0 0 20px;
+}
+
+.detail-card {
+    width: min(100%, 450px);
+    margin: 0 auto;
+    background: white;
+    border: 1px solid #999;
+    border-radius: 13px;
+    overflow: hidden;
+    box-shadow: 0 3px 5px #0003;
+    text-align: center;
+}
+
+.detail-card-header {
+    background: #34699e;
+    color: white;
+    padding: 10px 14px;
+    text-align: left;
+    font-weight: 700;
+    font-size: 15px;
+}
+
+.detail-card-body {
+    padding: 16px;
+}
+
+.detail-card-date {
+    font-size: 12px;
+    margin-bottom: 14px;
+}
+
+.detail-card-route {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.detail-card-route > div {
+    flex: 1;
+}
+
+.detail-card-route strong {
+    display: block;
+    font-size: 17px;
+}
+
+.detail-card-route small {
+    display: block;
+    color: #34699e;
+    font-size: 11px;
+}
+
+.detail-card-route i {
+    color: #3678b2;
+    font-size: 27px;
+}
+
+.detail-card-duration {
+    font-size: 12px;
+    margin: 15px 0 0;
+}
+
+.center-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin: 16px auto 0;
+}
+
+/* =====================================
+   SCHEDULE CONFIRMED
+===================================== */
+
+.wave-screen {
+    background:
+        url("images/auth-bg.svg")
+        center / cover no-repeat;
+}
+
+#scheduleConfirmedScreen {
+    min-height: 490px;
+    padding: 75px 15px;
+}
+
+.confirmation-card {
+    width: min(100%, 325px);
+    margin: auto;
+    padding: 28px 24px;
+    background: white;
+    border: 1px solid #b3b3b3;
+    border-radius: 9px;
+    box-shadow: 0 3px 5px #0003;
+    text-align: center;
+}
+
+.confirmation-card h2 {
+    color: #1c1c1c;
+    font-size: 18px;
+    font-weight: 750;
+}
+
+.success-check {
+    display: block;
+    font-size: 53px;
+    line-height: 1;
+    color: #61df45;
+    margin: 13px auto 18px;
+}
+
+.confirmation-card p {
+    font-size: 12px;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+/* =====================================
+   PASSENGER DETAILS
+===================================== */
+
+.reservation-screen {
+    min-height: 615px;
+}
+
+.reservation-steps {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 27px 14px;
+    background: #dedede;
+}
+
+.step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    color: #b0b0b0;
+    min-width: 140px;
+    text-align: center;
+    font-size: 12px;
+}
+
+.step i {
+    font-size: 31px;
+    line-height: 1;
+}
+
+.step.active,
+.step.done {
+    color: #34699e;
+    font-weight: 700;
+}
+
+.step-line {
+    width: 80px;
+    border-top: 2px dashed #aeb3b7;
+    transform: translateY(-8px);
+}
+
+.step-line.active {
+    border-color: #34699e;
+}
+
+/* SELECTED TRIP */
+.reservation-body {
+    padding: 40px 15px 85px;
+}
+
+.passenger-trip-card {
+    max-width: 590px;
+    margin: 0 auto 38px;
+    background: white;
+    border: 1px solid #aaa;
+    border-radius: 9px;
+    overflow: hidden;
+}
+
+.passenger-trip-header {
+    border-bottom: 1px solid #ccc;
+    padding: 9px 14px;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.passenger-trip-main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 15px 18px;
+}
+
+.passenger-trip-main strong {
+    display: block;
+    color: #34699e;
+    font-size: 21px;
+}
+
+.passenger-trip-main span {
+    font-size: 12px;
+}
+
+.passenger-trip-main i {
+    color: #34699e;
+    font-size: 24px;
+}
+
+.passenger-trip-bottom {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 18px 13px;
+    font-size: 11px;
+    color: #36506c;
+}
+
+/* PASSENGER FORM */
+.passenger-form {
+    position: relative;
+    max-width: 1020px;
+    margin: auto;
+    background: #67a5c1;
+    color: white;
+    padding: 32px 32px 38px;
+    border-radius: 8px;
+    box-shadow: 0 3px 5px #0002;
+}
+
+.passenger-form h2 {
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    transform: translateY(1px);
+    margin: 0;
+    padding: 13px 20px;
+    background: #67a5c1;
+    border-radius: 9px 9px 0 0;
+    color: white;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.passenger-fields {
+    display: grid;
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+    gap: 19px 24px;
+}
+
+.passenger-fields label {
+    color: white;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.passenger-fields input,
+.passenger-fields select {
+    display: block;
+    width: 100%;
+    height: 36px;
+    margin-top: 8px;
+    padding: 6px 10px;
+    background: white;
+    color: #303d48;
+    border: 1px solid #ced9df;
+    border-radius: 5px;
+    font-size: 12px;
+}
+
+.passenger-fields input:focus,
+.passenger-fields select:focus {
+    outline: 2px solid #c7e3ff;
+}
+
+.reservation-actions {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    max-width: 1020px;
+    margin: 17px auto;
+}
+
+.reservation-actions .book-btn {
+    min-width: 145px;
+}
+
+/* =====================================
+   REVIEW RESERVATION
+===================================== */
+
+.review-body {
+    min-height: 515px;
+    padding: 38px 15px 90px;
+    text-align: center;
+}
+
+.review-notice {
+    color: #516170;
+    font-size: 12px;
+    max-width: 600px;
+    margin: 13px auto;
+}
+
+/* =====================================
+   UPDATED RAILEASY TICKET
+===================================== */
+
+.render-ticket {
+    width: min(100%, 540px);
+    margin: 0 auto;
+    text-align: left;
+}
+
+.book-ticket {
+    position: relative;
+    background: white;
+    border: 1px solid #d1d1d1;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px #0002;
+}
+
+/* TICKET SIDE CUTOUTS */
+.book-ticket::before,
+.book-ticket::after {
+    content: "";
+    position: absolute;
+    left: -9px;
+    top: 43%;
+    width: 18px;
+    height: 18px;
+    background: white;
+    border: 1px solid #d1d1d1;
+    border-radius: 50%;
+    z-index: 2;
+}
+
+.book-ticket::after {
+    left: auto;
+    right: -9px;
+}
+
+/* =====================================
+   BLUE TICKET SECTION
+===================================== */
+
+.book-ticket-blue {
+    position: relative;
+    background: #34699e;
+    color: white;
+
+    /* EXTRA SPACE FOR BRANDING */
+    padding: 36px 48px 20px 24px;
+}
+
+/* NON-TRANSFERABLE TOP RIGHT */
+.book-ticket-meta {
+    position: absolute;
+    top: 12px;
+    right: 15px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.book-ticket-nontransferable {
+    color: #e7f2ff;
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+/* TRAIN LOGO + VERTICAL RAILEASY */
+.book-ticket-vertical-brand {
+    position: absolute;
+    right: 9px;
+    top: 53px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+
+    color: #e0efff;
+}
+
+/* TRAIN LOGO */
+.book-ticket-vertical-brand i {
+    font-size: 13px;
+    line-height: 1;
+}
+
+/* VERTICAL BRAND NAME */
+.book-ticket-vertical-brand span {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+/* NAME / TYPE / DATE ISSUED */
+.book-ticket-blue-header {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    font-size: 12px;
+    margin-bottom: 16px;
+}
+
+.book-ticket-blue-header > div {
+    min-width: 0;
+    max-width: 55%;
+}
+
+.book-ticket-blue-header > div:last-child {
+    text-align: right;
+}
+
+.book-ticket-blue-header small {
+    display: block;
+    font-size: 10px;
+    color: #e4effa;
+    margin-bottom: 4px;
+}
+
+.book-ticket-blue-header strong {
+    display: block;
+    font-size: 13px;
+    font-weight: 700;
+    overflow-wrap: anywhere;
+}
+
+/* FROM AND TO STATION */
+.book-ticket-route {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.book-ticket-route strong {
+    display: block;
+    font-size: 24px;
+}
+
+.book-ticket-route span {
+    display: block;
+    font-size: 11px;
+}
+
+.book-ticket-route i {
+    font-size: 28px;
+}
+
+/* =====================================
+   WHITE TICKET SECTION
+===================================== */
+
+.book-ticket-white {
+    display: grid;
+    grid-template-columns: 1.15fr 1fr 100px;
+    gap: 12px;
+    align-items: center;
+    padding: 18px 22px 20px;
+}
+
+.book-ticket-white small {
+    display: block;
+    color: #34699e;
+    font-size: 10px;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.book-ticket-white strong {
+    display: block;
+    color: #293e4e;
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+/* CONFIRMED STATUS */
+.book-ticket-white .ticket-status {
+    color: #25954b;
+}
+
+/* TICKET FARE */
+.book-ticket-white .ticket-amount {
+    color: #34699e;
+    font-size: 29px;
+    margin: 0;
+}
+
+/* =====================================
+   TICKET QR CODE
+===================================== */
+
+.ticket-qr-holder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 3px;
+    min-height: 93px;
+    overflow: hidden;
+    font-size: 10px;
+    color: #345;
+}
+
+.ticket-qr-holder canvas,
+.ticket-qr-holder img {
+    width: 88px !important;
+    height: 88px !important;
+}
+
+.ticket-qr-holder .qr-fallback {
+    border: 1px dashed #9aa;
+    padding: 15px;
+    text-align: center;
+    font-size: 10px;
+}
+
+/* =====================================
+   RESERVATION SUCCESS SCREEN
+===================================== */
+
+.success-content {
+    display: grid;
+    grid-template-columns:
+        minmax(0, 0.85fr)
+        minmax(0, 1fr);
+
+    gap: 42px;
+    align-items: center;
+    min-height: 455px;
+    padding: 42px 15px 65px;
+}
+
+.success-message {
+    min-height: 330px;
+    padding: 30px 24px;
+    background: white;
+    border: 1px solid #bbb;
+    border-radius: 9px;
+    box-shadow: 0 3px 5px #0002;
+    text-align: center;
+}
+
+.success-message h2 {
+    color: #222;
+    font-size: 21px;
+    font-weight: 750;
+}
+
+.success-message p {
+    font-size: 12px;
+    line-height: 1.5;
+    margin: 10px 0;
+}
+
+.success-message p strong {
+    color: #34699e;
+}
+
+.success-message .important {
+    color: #a33333;
+    font-weight: 700;
+    margin-top: 20px;
+}
+
+.success-ticket-area .render-ticket {
+    width: 100%;
+}
+
+.download-hint {
+    color: #637385;
+    font-size: 11px;
+    text-align: center;
+    margin-top: 8px;
+}
+
+/* =====================================
+   RESPONSIVE DESIGN
+===================================== */
+
+@media (max-width: 900px) {
+
+    .booking-hero-grid {
+        gap: 24px;
+    }
+
+    .passenger-fields {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .success-content {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        max-width: 620px;
+    }
+
+    .success-message {
+        min-height: auto;
+    }
+}
+
+@media (max-width: 700px) {
+
+    .booking-hero {
+        padding: 30px 0;
+    }
+
+    .booking-hero-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .booking-map,
+    .booking-map iframe {
+        min-height: 270px;
+        height: 270px;
+    }
+
+    .schedule-card-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .reservation-steps {
+        gap: 4px;
+    }
+
+    .step {
+        min-width: 0;
+        flex: 1;
+        font-size: 10px;
+    }
+
+    .step i {
+        font-size: 24px;
+    }
+
+    .step-line {
+        width: 24px;
+    }
+
+    .book-ticket-white {
+        grid-template-columns: 1fr 1fr 80px;
+        padding: 12px;
+        gap: 6px;
+    }
+
+    .book-ticket-blue {
+        padding: 36px 42px 17px 16px;
+    }
+
+    .book-ticket-route strong {
+        font-size: 19px;
+    }
+
+    .book-ticket-blue-header strong {
+        font-size: 11px;
+    }
+
+    .ticket-qr-holder canvas,
+    .ticket-qr-holder img {
+        width: 67px !important;
+        height: 67px !important;
+    }
+}
+
+@media (max-width: 450px) {
+
+    .search-form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .booking-search-card .book-btn {
+        width: 100%;
+    }
+
+    .passenger-fields {
+        grid-template-columns: 1fr;
+    }
+
+    .passenger-form {
+        padding: 35px 16px 20px;
+    }
+
+    .passenger-trip-main strong {
+        font-size: 16px;
+    }
+
+    .book-ticket-white {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .ticket-qr-holder {
+        grid-column: 1 / -1;
+    }
+
+    .center-actions .book-btn {
+        flex: 1;
+    }
+}

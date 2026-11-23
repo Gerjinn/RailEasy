@@ -1,0 +1,758 @@
+/* =====================================
+   RAILEASY FARE MATRIX DESIGN
+===================================== */
+
+/* GENERAL */
+.fare-page {
+    margin: 0;
+    padding: 0;
+    background: #ffffff;
+    color: #222;
+    font-family: Arial, sans-serif;
+}
+
+/* =====================================
+   NAVIGATION BAR
+===================================== */
+
+.fare-page .navbar {
+    background: #34699e;
+    padding: 12px 0;
+}
+
+.fare-page .navbar-brand {
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.fare-page .nav-link {
+    color: white;
+    font-size: 14px;
+    margin: 0 15px;
+}
+
+.fare-page .nav-link:hover,
+.fare-page .nav-link.active {
+    color: #d0e9ff;
+}
+
+.fare-account-icon {
+    color: white;
+    font-size: 22px;
+    text-decoration: none;
+}
+
+.fare-account-icon:hover {
+    color: #bde0ff;
+}
+
+/* =====================================
+   FARE MATRIX HERO
+===================================== */
+
+.fare-hero {
+    position: relative;
+    padding: 35px 0 90px;
+    text-align: center;
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            rgba(255,255,255,0.38),
+            rgba(255,255,255,0.38)
+        ),
+        url("images/auth-bg.svg");
+
+    background-position: center top;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.fare-hero .container {
+    position: relative;
+    z-index: 1;
+}
+
+.fare-hero h1 {
+    color: #34699e;
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 6px;
+}
+
+.fare-subtitle {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* =====================================
+   FARE CALCULATOR
+===================================== */
+
+.fare-calculator {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 290px;
+    align-items: start;
+    gap: 25px;
+
+    width: 100%;
+    max-width: 1050px;
+    margin: 25px auto 0;
+    padding: 30px;
+
+    background: #34699e;
+    color: white;
+    border-radius: 15px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.12);
+}
+
+/* STATION FIELDS */
+.fare-fields {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.station-field {
+    position: relative;
+    text-align: left;
+}
+
+.station-field label {
+    display: block;
+    color: white;
+    font-size: 12px;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+/* FROM / TO DROPDOWNS */
+.station-field select {
+    display: block;
+    width: 100%;
+    height: 39px;
+
+    padding: 8px 12px;
+    background: white;
+    color: #555;
+
+    border: 1px solid #dedede;
+    border-radius: 5px;
+
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.station-field select:focus {
+    outline: 2px solid #94caff;
+    outline-offset: 1px;
+    border-color: #34699e;
+}
+
+.station-field select option {
+    background: white;
+    color: #333;
+    font-size: 12px;
+}
+
+/* =====================================
+   FARE RESULTS
+===================================== */
+
+.fare-result {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    min-height: 150px;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    color: #34699e;
+}
+
+/* REGULAR / DISCOUNTED PRICE */
+.fare-price {
+    text-align: center;
+    padding: 15px 8px 10px;
+    border-right: 1px solid #ddd;
+}
+
+.fare-price:nth-child(2) {
+    border-right: none;
+}
+
+.fare-price h3 {
+    color: #34699e;
+    font-size: 13px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.fare-price span {
+    display: block;
+    color: #34699e;
+    font-size: 29px;
+    font-weight: bold;
+}
+
+.fare-price small {
+    display: block;
+    color: #777;
+    font-size: 10px;
+    margin-top: 7px;
+}
+
+/* SENIOR / PWD RESULT */
+.fare-extra {
+    grid-column: 1 / -1;
+    text-align: center;
+    background: #ecf4fb;
+    color: #34699e;
+    font-size: 12px;
+    padding: 9px;
+    margin: 0;
+}
+
+/* JOURNEY DETAILS */
+.journey-details {
+    grid-column: 1 / -1;
+    color: #f1f7ff;
+    text-align: center;
+    font-size: 12px;
+    margin: 4px 0 0;
+}
+
+.fare-disclaimer {
+    font-size: 11px;
+    color: #697e91;
+    margin-top: 13px;
+}
+
+/* =====================================
+   TICKET TYPES SECTION
+===================================== */
+
+.ticket-section {
+    position: relative;
+    z-index: 1;
+    padding: 0 0 45px;
+    margin-top: -40px;
+}
+
+/* TICKET TYPES TITLE */
+.section-heading {
+    max-width: 590px;
+    margin: 0 auto 27px;
+    padding: 11px 18px;
+
+    background: #34699e;
+    color: white;
+    border-radius: 10px;
+
+    font-size: 23px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* TICKET TITLE */
+.ticket-title {
+    color: #222;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 22px;
+}
+
+/* TICKET CONTAINER */
+.sample-ticket {
+    max-width: 430px;
+    width: 100%;
+    margin: 0 auto;
+
+    background: white;
+    border: 1px solid #d2dce5;
+    border-radius: 14px;
+    overflow: hidden;
+
+    box-shadow: 0 3px 6px rgba(0,0,0,0.12);
+}
+
+/* =====================================
+   BLUE PART OF TICKET
+===================================== */
+
+.ticket-top {
+    position: relative;
+    background: #34699e;
+    color: white;
+    padding: 18px 20px 22px;
+}
+
+/* TICKET SIDE CUTOUTS */
+.ticket-top::before,
+.ticket-top::after {
+    content: "";
+    position: absolute;
+    bottom: 35px;
+
+    height: 17px;
+    width: 17px;
+    background: white;
+    border-radius: 50%;
+}
+
+.ticket-top::before {
+    left: -9px;
+}
+
+.ticket-top::after {
+    right: -9px;
+}
+
+/* TICKET HEADER */
+.ticket-topline {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* TICKET TYPE */
+.ticket-type {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin: 13px 0;
+    font-size: 12px;
+}
+
+.ticket-type i {
+    font-size: 25px;
+}
+
+/* TICKET ROUTE */
+.ticket-route {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.ticket-route > div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.ticket-route > div:last-child {
+    align-items: flex-end;
+}
+
+.ticket-route small {
+    font-size: 10px;
+    color: #dcecff;
+}
+
+.ticket-route strong {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.ticket-route span {
+    font-size: 11px;
+}
+
+.ticket-route > i {
+    font-size: 25px;
+}
+
+/* =====================================
+   WHITE PART OF TICKET
+===================================== */
+
+.ticket-bottom {
+    display: grid;
+    grid-template-columns: 1fr 75px 75px;
+    align-items: center;
+    gap: 12px;
+
+    padding: 15px;
+    min-height: 105px;
+}
+
+/* TICKET INFORMATION */
+.ticket-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.ticket-info small {
+    font-size: 10px;
+    color: #34699e;
+}
+
+.ticket-info strong {
+    font-size: 12px;
+    color: #222;
+}
+
+/* DECORATIVE DEMO QR */
+.ticket-qr {
+    position: relative;
+    width: 65px;
+    height: 65px;
+
+    background: white;
+    background-image:
+        repeating-conic-gradient(
+            #25476b 0% 25%,
+            white 0% 50%
+        );
+
+    background-size: 10px 10px;
+    border: 4px solid white;
+    box-shadow: 0 0 0 1px #bbb;
+}
+
+.ticket-qr span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    padding: 4px;
+    background: white;
+    color: #34699e;
+    font-size: 10px;
+    font-weight: bold;
+}
+
+/* TICKET PRICE */
+.ticket-cost {
+    text-align: right;
+    color: #34699e;
+}
+
+.ticket-cost small {
+    display: block;
+    font-size: 10px;
+}
+
+.ticket-cost strong {
+    display: block;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+/* TICKET DESCRIPTION */
+.ticket-caption {
+    text-align: center;
+    font-size: 14px;
+    margin-top: 18px;
+}
+
+/* =====================================
+   COMPLETE FARE MATRIX
+===================================== */
+
+.matrix-section {
+    padding: 30px 0 55px;
+    background: white;
+}
+
+.matrix-title {
+    color: #34699e;
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+/* SCROLLABLE TABLE */
+.matrix-wrapper {
+    width: 100%;
+    overflow-x: auto;
+
+    border: 1px solid #ccd7e3;
+    border-radius: 5px;
+
+    box-shadow: 0 3px 6px rgba(0,0,0,0.10);
+}
+
+/* FARE TABLE */
+.fare-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    font-size: 11px;
+    white-space: nowrap;
+}
+
+.fare-table caption {
+    caption-side: top;
+    background: #e8f1fa;
+    color: #333;
+    font-size: 12px;
+    padding: 9px;
+    text-align: center;
+}
+
+/* TABLE CELLS */
+.fare-table th,
+.fare-table td {
+    border: 1px solid #d6dce5;
+    text-align: center;
+    padding: 7px 5px;
+}
+
+/* COLUMN HEADERS */
+.fare-table thead th {
+    background: #34699e;
+    color: white;
+    font-weight: bold;
+    min-width: 65px;
+}
+
+/* ROW HEADERS */
+.fare-table tbody th {
+    position: sticky;
+    left: 0;
+    z-index: 1;
+
+    background: #34699e;
+    color: white;
+    font-weight: normal;
+
+    min-width: 135px;
+    text-align: left;
+}
+
+/* ALTERNATING ROW COLORS */
+.fare-table tbody tr:nth-child(even) td {
+    background: #f4f8fc;
+}
+
+/* SAME STATION */
+.fare-table td.same-station {
+    background: #aaa !important;
+    color: white;
+    font-weight: bold;
+}
+
+/* FARE BUTTONS */
+.matrix-fare {
+    display: block;
+    width: 100%;
+    padding: 5px 3px;
+
+    background: transparent;
+    border: none;
+    border-radius: 4px;
+
+    color: #333;
+    font-size: 11px;
+    cursor: pointer;
+}
+
+.matrix-fare:hover,
+.matrix-fare:focus-visible {
+    background: #d9ecff;
+    color: #245786;
+}
+
+.matrix-fare.selected {
+    background: #34699e;
+    color: white;
+}
+
+/* TABLE INSTRUCTIONS */
+.matrix-help {
+    font-size: 11px;
+    color: #777;
+    margin: 10px 0 0;
+}
+
+/* =====================================
+   DISCOUNT INFORMATION
+===================================== */
+
+.discount-box {
+    background: #e4e4e4;
+    padding: 25px 15px;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.discount-box h3 {
+    font-size: 17px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.discount-box p {
+    font-size: 13px;
+    margin-bottom: 17px;
+}
+
+.discount-box i {
+    color: #34699e;
+    margin-right: 5px;
+}
+
+.discount-box small {
+    display: block;
+    color: #666;
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+/* =====================================
+   UPDATED FARE MATRIX BOTTOM SECTION
+===================================== */
+
+/* BACKGROUND */
+.fare-cta {
+    min-height: 230px;
+    padding: 55px 20px;
+    text-align: center;
+
+    background:
+        url("images/auth-bg.svg")
+        center center / cover no-repeat;
+}
+
+/* HEADING */
+.fare-cta h2 {
+    color: #34699e;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+/* DESCRIPTION */
+.fare-cta p {
+    color: #222;
+    font-size: 16px;
+    margin-bottom: 25px;
+    line-height: 1.5;
+}
+
+/* RESERVE / REGISTER BUTTON */
+.fare-register-btn {
+    display: inline-block;
+    background: #34699e;
+    color: white;
+
+    padding: 12px 30px;
+    border: none;
+    border-radius: 7px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    box-shadow: 0 3px 5px rgba(0,0,0,0.2);
+    text-decoration: none;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+/* BUTTON HOVER */
+.fare-register-btn:hover {
+    background: #255580;
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* =====================================
+   MOBILE RESPONSIVE
+===================================== */
+
+@media (max-width: 768px) {
+
+    /* HERO */
+    .fare-hero {
+        padding: 35px 0 85px;
+    }
+
+    .fare-hero h1 {
+        font-size: 26px;
+    }
+
+    /* CALCULATOR */
+    .fare-calculator {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 22px;
+    }
+
+    .fare-fields {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .fare-result {
+        min-height: 130px;
+    }
+
+    /* TICKET SECTION */
+    .ticket-section {
+        margin-top: -30px;
+    }
+
+    .section-heading {
+        font-size: 20px;
+    }
+
+    .ticket-title {
+        font-size: 15px;
+    }
+
+    .ticket-bottom {
+        grid-template-columns: 1fr 65px 70px;
+        gap: 8px;
+    }
+
+    .ticket-cost strong {
+        font-size: 22px;
+    }
+
+    /* FARE TABLE */
+    .matrix-title {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    /* DISCOUNT BOX */
+    .discount-box {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    /* UPDATED BOTTOM SECTION */
+    .fare-cta {
+        min-height: 200px;
+        padding: 45px 15px;
+    }
+
+    .fare-cta h2 {
+        font-size: 20px;
+    }
+
+    .fare-cta p {
+        font-size: 14px;
+    }
+
+    .fare-register-btn {
+        font-size: 13px;
+        padding: 11px 25px;
+    }
+}

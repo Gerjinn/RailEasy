@@ -1,0 +1,264 @@
+/* =====================================
+   RAILEASY SHARED NAVBAR
+===================================== */
+
+#siteNavbar {
+    width: 100%;
+    position: relative;
+    z-index: 1000;
+}
+
+#siteNavbar * {
+    box-sizing: border-box;
+}
+
+/* NAVBAR */
+#siteNavbar .rail-navbar {
+    background: #34699e;
+    color: white;
+    min-height: 80px;
+}
+
+/* NAVBAR CONTAINER */
+#siteNavbar .rail-inner {
+    max-width: 1650px;
+    width: 94%;
+    min-height: 80px;
+
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+/* LOGO */
+#siteNavbar .rail-brand {
+    color: white;
+    font-family: Arial, sans-serif;
+    font-size: 25px;
+    font-weight: bold;
+    text-decoration: none;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+/* MAIN MENU */
+#siteNavbar .rail-menu {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    min-width: 0;
+}
+
+#siteNavbar .rail-links {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: clamp(14px, 2.4vw, 40px);
+}
+
+/* NAVIGATION LINKS */
+#siteNavbar .rail-link {
+    color: white;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    text-decoration: none;
+    white-space: nowrap;
+    padding: 14px 1px;
+}
+
+#siteNavbar .rail-link:hover {
+    color: #d6edff;
+}
+
+#siteNavbar .rail-link.active {
+    font-weight: bold;
+}
+
+/* =====================================
+   GUEST BUTTONS
+===================================== */
+
+#siteNavbar .rail-actions {
+    display: flex;
+    gap: 8px;
+    flex-shrink: 0;
+}
+
+#siteNavbar .rail-register,
+#siteNavbar .rail-login {
+    color: white;
+    text-decoration: none;
+    font-size: 13px;
+    padding: 9px 14px;
+    border-radius: 4px;
+    white-space: nowrap;
+}
+
+#siteNavbar .rail-register {
+    border: 2px solid #35b6ff;
+}
+
+#siteNavbar .rail-login {
+    background: #478bc4;
+    border: 2px solid #478bc4;
+}
+
+#siteNavbar .rail-register:hover,
+#siteNavbar .rail-login:hover {
+    background: #21517e;
+}
+
+/* =====================================
+   LOGGED-IN PROFILE
+===================================== */
+
+#siteNavbar .rail-profile {
+    position: relative;
+    flex-shrink: 0;
+}
+
+#siteNavbar .rail-profile-button {
+    background: transparent;
+    color: white;
+    border: none;
+
+    font-size: 29px;
+    padding: 5px;
+    line-height: 1;
+
+    cursor: pointer;
+}
+
+#siteNavbar .rail-profile-button:hover {
+    color: #cde7ff;
+}
+
+/* PROFILE DROPDOWN */
+#siteNavbar .rail-profile-menu {
+    position: absolute;
+    right: 0;
+    top: calc(100% + 8px);
+
+    width: 210px;
+    padding: 9px;
+
+    background: white;
+    color: #244c72;
+
+    border: 1px solid #d6e1ea;
+    border-radius: 9px;
+
+    box-shadow: 0 5px 20px #0002;
+}
+
+#siteNavbar .rail-profile-menu[hidden] {
+    display: none;
+}
+
+/* USER NAME */
+#siteNavbar .rail-profile-name {
+    font-size: 14px;
+    font-weight: bold;
+
+    padding: 10px;
+    overflow-wrap: anywhere;
+
+    border-bottom: 1px solid #edf0f4;
+}
+
+/* LOGOUT BUTTON */
+#siteNavbar .rail-logout {
+    display: block;
+    width: 100%;
+
+    padding: 10px;
+
+    background: white;
+    color: #244c72;
+
+    border: none;
+    border-radius: 5px;
+
+    font-size: 14px;
+    text-align: left;
+    cursor: pointer;
+}
+
+#siteNavbar .rail-logout:hover {
+    background: #ebf5ff;
+}
+
+/* MOBILE MENU BUTTON */
+#siteNavbar .rail-menu-button {
+    display: none;
+
+    background: transparent;
+    color: white;
+
+    border: 1px solid #a4c8e6;
+    border-radius: 6px;
+
+    padding: 6px 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* =====================================
+   RESPONSIVE DESIGN
+===================================== */
+
+@media (max-width: 1100px) {
+
+    #siteNavbar .rail-navbar,
+    #siteNavbar .rail-inner {
+        min-height: 65px;
+    }
+
+    #siteNavbar .rail-inner {
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 0;
+    }
+
+    #siteNavbar .rail-brand {
+        font-size: 22px;
+    }
+
+    #siteNavbar .rail-menu-button {
+        display: block;
+    }
+
+    #siteNavbar .rail-menu {
+        display: none;
+        flex: 0 0 100%;
+        flex-direction: column;
+        align-items: flex-start;
+
+        padding: 14px 0 19px;
+        gap: 12px;
+    }
+
+    #siteNavbar .rail-menu.open {
+        display: flex;
+    }
+
+    #siteNavbar .rail-links {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2px;
+    }
+
+    #siteNavbar .rail-link {
+        font-size: 15px;
+        padding: 8px 0;
+    }
+
+    #siteNavbar .rail-profile-menu {
+        left: 0;
+        right: auto;
+    }
+}

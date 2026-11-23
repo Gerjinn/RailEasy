@@ -1,0 +1,405 @@
+/* =================================
+   RAILEASY MAIN DASHBOARD
+================================= */
+
+.main-page {
+    margin: 0;
+    background: white;
+    font-family: Arial, sans-serif;
+}
+
+/* NAVIGATION BAR */
+.main-page .navbar {
+    background: #34699e;
+    padding: 12px 0;
+}
+
+.main-page .navbar-brand {
+    font-size: 20px;
+    color: white;
+}
+
+.main-page .nav-link {
+    color: white;
+    font-size: 14px;
+    margin: 0 12px;
+}
+
+.main-page .nav-link:hover,
+.main-page .nav-link.active {
+    color: #d8edff;
+}
+
+/* USER PROFILE */
+.profile-btn {
+    border: none;
+    background: transparent;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.profile-btn:hover {
+    color: #d8edff;
+}
+
+.main-page .dropdown-menu {
+    border-radius: 8px;
+    box-shadow: 0 3px 12px #0002;
+}
+
+.main-page .dropdown-item-text {
+    font-size: 13px;
+    font-weight: bold;
+    color: #34699e;
+}
+
+.main-page .dropdown-item {
+    font-size: 13px;
+}
+
+/* =================================
+   MAIN HERO SECTION
+================================= */
+
+.main-hero {
+    position: relative;
+    isolation: isolate;
+    min-height: 450px;
+    padding: 65px 20px 75px;
+    overflow: hidden;
+}
+
+/* BLURRED TRAIN IMAGE */
+.main-hero::before {
+    content: "";
+    position: absolute;
+    inset: -10px;
+    z-index: -2;
+
+    background: url("images/train.jpg")
+        center center / cover no-repeat;
+
+    filter: blur(3px);
+    transform: scale(1.04);
+}
+
+/* DARK OVERLAY */
+.main-hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: rgba(0, 0, 0, 0.40);
+}
+
+/* WELCOME TEXT */
+.main-welcome {
+    text-align: center;
+    color: white;
+    margin-bottom: 35px;
+}
+
+.main-welcome h1 {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.main-welcome p {
+    font-size: 16px;
+    margin: 0;
+}
+
+/* =================================
+   DASHBOARD CARDS
+================================= */
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px 45px;
+
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+/* COMMON CARD DESIGN */
+.dashboard-card {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+
+    min-height: 105px;
+    padding: 22px 27px;
+
+    border-radius: 11px;
+    text-decoration: none;
+    color: white;
+
+    box-shadow: 0 4px 7px rgba(0,0,0,0.15);
+    transition: transform 0.2s ease,
+                box-shadow 0.2s ease;
+}
+
+.dashboard-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.23);
+    color: white;
+}
+
+/* BLUE CARDS */
+.card-blue {
+    background: #34699e;
+}
+
+/* LIGHT BLUE CARDS */
+.card-light {
+    background: #66a8c5;
+}
+
+/* CARD ICONS */
+.dashboard-card > i {
+    font-size: 40px;
+    flex-shrink: 0;
+    width: 48px;
+    text-align: center;
+}
+
+/* CARD TEXT */
+.dashboard-card h2 {
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 6px;
+}
+
+.dashboard-card p {
+    color: white;
+    font-size: 13px;
+    line-height: 1.4;
+    margin: 0;
+}
+
+/* =================================
+   STATION OPENING SCHEDULE
+================================= */
+
+.schedule-section {
+    background: white;
+}
+
+/* BLUE HEADING BAR */
+.schedule-banner {
+    background: #34699e;
+    color: white;
+
+    padding: 17px 15px;
+    margin: 0;
+
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* LIGHT RAILWAY BACKGROUND */
+.schedule-content {
+    position: relative;
+    isolation: isolate;
+
+    min-height: 500px;
+    padding: 28px 20px 35px;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+/* FAINT RAILWAY IMAGE */
+.schedule-content::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+
+    background: url("images/auth-bg.svg")
+        center center / cover no-repeat;
+
+    filter: grayscale(100%);
+    opacity: 0.24;
+}
+
+/* TABLE CONTAINER */
+.schedule-table-container {
+    width: min(100%, 550px);
+}
+
+/* SCHEDULE TABLE */
+.opening-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+    font-size: 14px;
+    color: #222;
+}
+
+/* SOUTHBOUND HEADER */
+.direction-row th {
+    background: #34699e;
+    color: white;
+    padding: 10px;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+/* STATION / TIME HEADER */
+.column-header th {
+    background: #77aec7;
+    color: white;
+    font-weight: bold;
+    padding: 9px;
+}
+
+/* TABLE ROWS */
+.opening-table tbody td {
+    padding: 7px 10px;
+    font-weight: 600;
+}
+
+/* ALTERNATING ROW COLORS */
+.opening-table tbody tr:nth-child(odd) {
+    background: rgba(215, 215, 215, 0.78);
+}
+
+.opening-table tbody tr:nth-child(even) {
+    background: rgba(255, 255, 255, 0.82);
+}
+
+/* TABLE COLUMN WIDTH */
+.opening-table th:first-child,
+.opening-table td:first-child {
+    width: 50%;
+}
+
+.opening-table th:last-child,
+.opening-table td:last-child {
+    width: 50%;
+}
+
+/* SAMPLE SCHEDULE NOTE */
+.schedule-note {
+    margin: 16px 0 0;
+    padding: 8px;
+
+    color: #606060;
+    background: rgba(255,255,255,0.85);
+
+    font-size: 11px;
+    text-align: center;
+}
+
+/* =================================
+   FOOTER
+================================= */
+
+.main-page footer {
+    background: #34699e;
+    color: white;
+    padding: 35px 0 12px;
+}
+
+.main-page footer h5 {
+    font-size: 18px;
+}
+
+.main-page footer p {
+    font-size: 13px;
+}
+
+.main-page footer a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    font-size: 13px;
+    margin: 5px 0;
+}
+
+.main-page footer a:hover {
+    text-decoration: underline;
+}
+
+.main-page .copyright {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 12px;
+}
+
+/* =================================
+   RESPONSIVE DESIGN
+================================= */
+
+@media (max-width: 768px) {
+
+    .main-hero {
+        min-height: 450px;
+        padding: 45px 15px 55px;
+    }
+
+    .main-welcome h1 {
+        font-size: 27px;
+    }
+
+    .main-welcome p {
+        font-size: 14px;
+    }
+
+    .dashboard-grid {
+        gap: 16px;
+    }
+
+    .dashboard-card {
+        gap: 12px;
+        padding: 18px 14px;
+    }
+
+    .dashboard-card > i {
+        font-size: 30px;
+        width: 35px;
+    }
+
+    .dashboard-card h2 {
+        font-size: 14px;
+    }
+
+    .dashboard-card p {
+        font-size: 11px;
+    }
+
+    .schedule-banner {
+        font-size: 15px;
+    }
+
+    .opening-table {
+        font-size: 12px;
+    }
+
+    .schedule-content {
+        min-height: auto;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+        max-width: 330px;
+    }
+
+    .dashboard-card {
+        min-height: 85px;
+    }
+
+    .main-page footer {
+        text-align: center;
+    }
+}

@@ -1,0 +1,364 @@
+/* GENERAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #ffffff;
+    color: #222;
+}
+
+/* NAVBAR */
+.navbar {
+    background: #34699e;
+    padding: 12px 0;
+}
+
+.navbar-brand {
+    font-size: 20px;
+}
+
+.navbar .nav-link {
+    color: white;
+    font-size: 14px;
+    margin: 0 15px;
+}
+
+.navbar .nav-link:hover {
+    color: #a9d9f0;
+}
+
+.nav-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.btn-register {
+    background: transparent;
+    border: 2px solid #25aeff;
+    color: white;
+    border-radius: 0;
+    font-size: 13px;
+}
+
+.btn-login {
+    background: #478bc4;
+    color: white;
+    border-radius: 0;
+    font-size: 13px;
+}
+
+.btn-register:hover,
+.btn-login:hover {
+    background: #25527c;
+    color: white;
+}
+
+/* HERO SECTION */
+.hero {
+    min-height: 400px;
+    background: linear-gradient(
+        rgba(0,0,0,0.15),
+        rgba(0,0,0,0.35)
+    ), url("images/train.jpg");
+
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+}
+
+.hero-content {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.hero-text {
+    color: white;
+    text-align: center;
+    max-width: 450px;
+}
+
+.hero-text h1 {
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.hero-text p {
+    font-size: 16px;
+}
+
+.btn-start {
+    background: #34699e;
+    color: white;
+    padding: 10px 24px;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.btn-start:hover {
+    background: #25527c;
+    color: white;
+}
+
+/* FEATURES */
+.features {
+    padding: 45px 0 90px;
+    background: white;
+}
+
+.feature-circle {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    color: white;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 3px 4px #aaa;
+}
+
+.feature-circle i {
+    font-size: 50px;
+    margin-bottom: 10px;
+}
+
+.feature-circle p {
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.blue {
+    background: #34699e;
+}
+
+.light-blue {
+    background: #66a9c6;
+}
+
+.gray {
+    background: #aaaaaa;
+}
+
+/* ABOUT DESCRIPTION */
+.about-description {
+    text-align: center;
+    max-width: 900px;
+    margin: 55px auto 0;
+}
+
+.about-description p {
+    font-size: 16px;
+    margin-bottom: 25px;
+}
+
+/* FOOTER */
+footer {
+    background: #34699e;
+    color: white;
+    padding: 35px 0 12px;
+}
+
+footer h5 {
+    font-size: 18px;
+}
+
+footer p {
+    font-size: 13px;
+    margin: 8px 0;
+}
+
+footer a {
+    display: block;
+    color: white;
+    font-size: 13px;
+    text-decoration: none;
+    margin: 5px 0;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+.copyright {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 12px;
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 768px) {
+    .hero {
+        min-height: 320px;
+    }
+
+    .hero-content {
+        justify-content: center;
+    }
+
+    .hero-text h1 {
+        font-size: 26px;
+    }
+
+    .nav-buttons {
+        margin-top: 15px;
+    }
+
+    .about-description {
+        padding: 0 20px;
+    }
+
+    footer {
+        text-align: center;
+    }
+}
+
+/* =================================
+   REGISTER AND LOGIN PAGE
+================================= */
+
+.auth-section {
+    min-height: 90vh;
+    background: #eef3f8;
+    display: flex;
+    align-items: center;
+    padding: 60px 0;
+}
+
+/* FORM CONTAINER */
+.auth-card {
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.10);
+}
+
+/* FORM ICON */
+.auth-icon {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.auth-icon i {
+    font-size: 60px;
+    color: #34699e;
+}
+
+/* FORM TITLE */
+.auth-card h2 {
+    text-align: center;
+    font-size: 26px;
+    font-weight: bold;
+    color: #34699e;
+}
+
+.auth-subtitle {
+    text-align: center;
+    color: #777;
+    font-size: 14px;
+    margin-bottom: 30px;
+}
+
+/* FORM INPUT */
+.auth-card .form-label {
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.auth-card .form-control {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.auth-card .form-control:focus {
+    border-color: #34699e;
+    box-shadow: 0 0 5px rgba(52,105,158,0.25);
+}
+
+/* REGISTER / LOGIN BUTTON */
+.auth-submit {
+    width: 100%;
+    background: #34699e;
+    color: white;
+    padding: 12px;
+    font-weight: bold;
+    border-radius: 6px;
+}
+
+.auth-submit:hover {
+    background: #25527c;
+    color: white;
+}
+
+.auth-submit:disabled {
+    opacity: 0.65;
+}
+
+/* BOTTOM LINKS */
+.auth-bottom {
+    text-align: center;
+    margin-top: 25px;
+    margin-bottom: 0;
+    font-size: 14px;
+}
+
+.auth-bottom a {
+    color: #34699e;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.auth-bottom a:hover {
+    text-decoration: underline;
+}
+
+/* SUCCESS AND ERROR MESSAGES */
+.auth-message {
+    display: none;
+    padding: 12px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    font-size: 14px;
+    text-align: center;
+}
+
+.auth-message.success {
+    display: block;
+    background: #d4edda;
+    color: #155724;
+}
+
+.auth-message.error {
+    display: block;
+    background: #f8d7da;
+    color: #721c24;
+}
+
+/* LOGGED-IN NAVBAR */
+.logged-user {
+    color: white;
+    font-size: 14px;
+    align-self: center;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+    .auth-section {
+        padding: 35px 15px;
+    }
+
+    .auth-card {
+        padding: 25px;
+    }
+
+    .auth-card h2 {
+        font-size: 23px;
+    }
+}

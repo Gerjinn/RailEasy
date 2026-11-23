@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Register - RailEasy</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+          rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="register.css">
+    <link rel="stylesheet" href="nav.css">
+</head>
+
+<body class="register-page">
+
+    <!-- SHARED NAVIGATION -->
+    <header id="siteNavbar"></header>
+
+    <main class="register-main">
+
+        <!-- SCREEN 1: CREATE ACCOUNT -->
+        <section id="registerScreen"
+                 class="register-screen">
+
+            <div class="register-card">
+
+                <h1>Create an Account</h1>
+
+                <form id="registerForm">
+
+                    <!-- PERSONAL INFORMATION -->
+                    <div class="register-grid">
+
+                        <div class="register-field">
+
+                            <label for="lastName">
+                                Last Name:
+                            </label>
+
+                            <input
+                                type="text"
+                                id="lastName"
+                                autocomplete="family-name"
+                                placeholder="Last Name"
+                                required>
+                        </div>
+
+                        <div class="register-field">
+
+                            <label for="firstName">
+                                First Name:
+                            </label>
+
+                            <input
+                                type="text"
+                                id="firstName"
+                                autocomplete="given-name"
+                                placeholder="First Name"
+                                required>
+                        </div>
+
+                        <div class="register-field">
+
+                            <label for="phoneNumber">
+                                Phone Number:
+                            </label>
+
+                            <input
+                                type="tel"
+                                id="phoneNumber"
+                                autocomplete="tel"
+                                placeholder="09123456789"
+                                pattern="09[0-9]{9}"
+                                maxlength="11"
+                                required>
+                        </div>
+
+                    </div>
+
+                    <!-- EMAIL -->
+                    <div class="register-field email-field">
+
+                        <label for="registerEmail">
+                            Email:
+                        </label>
+
+                        <input
+                            type="email"
+                            id="registerEmail"
+                            autocomplete="email"
+                            placeholder="Enter your email"
+                            required>
+                    </div>
+
+                    <!-- PASSWORD FIELDS -->
+                    <div class="register-password-grid">
+
+                        <!-- PASSWORD -->
+                        <div class="register-field">
+
+                            <label for="registerPassword">
+                                Password:
+                            </label>
+
+                            <div class="password-wrapper">
+
+                                <input
+                                    type="password"
+                                    id="registerPassword"
+                                    placeholder="Minimum 8 characters"
+                                    autocomplete="new-password"
+                                    minlength="8"
+                                    required>
+
+                                <button
+                                    type="button"
+                                    class="password-toggle"
+                                    data-target="registerPassword"
+                                    aria-label="Show password"
+                                    aria-pressed="false">
+
+                                    <i class="bi bi-eye-slash"></i>
+
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                        <!-- CONFIRM PASSWORD -->
+                        <div class="register-field">
+
+                            <label for="confirmPassword">
+                                Re-type Password:
+                            </label>
+
+                            <div class="password-wrapper">
+
+                                <input
+                                    type="password"
+                                    id="confirmPassword"
+                                    placeholder="Confirm password"
+                                    autocomplete="new-password"
+                                    minlength="8"
+                                    required>
+
+                                <button
+                                    type="button"
+                                    class="password-toggle"
+                                    data-target="confirmPassword"
+                                    aria-label="Show password"
+                                    aria-pressed="false">
+
+                                    <i class="bi bi-eye-slash"></i>
+
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <!-- ERROR MESSAGE -->
+                    <p id="registerError"
+                       class="register-error"
+                       role="alert"
+                       hidden></p>
+
+                    <!-- REGISTER BUTTON -->
+                    <div class="register-actions">
+
+                        <button
+                            type="submit"
+                            id="registerBtn"
+                            class="register-btn">
+
+                            Register
+
+                        </button>
+
+                        <span>or</span>
+
+                        <button
+                            type="button"
+                            id="googleRegisterBtn"
+                            class="google-btn"
+                            title="Google registration is unavailable in this demo">
+
+                            G
+
+                        </button>
+
+                    </div>
+
+                    <p id="googleMessage"
+                       class="register-note"
+                       hidden></p>
+
+                    <!-- SIGN IN -->
+                    <p class="register-signin">
+
+                        Already have an account?
+
+                        <a href="login.html">
+                            Sign In!
+                        </a>
+
+                    </p>
+
+                </form>
+
+            </div>
+
+        </section>
+
+        <!-- SCREEN 2: EMAIL VERIFICATION -->
+        <section id="verifyScreen"
+                 class="register-screen"
+                 hidden>
+
+            <div class="register-card verify-card">
+
+                <h1>Verifying your account!</h1>
+
+                <p>
+                    Thank you for registering with RailEasy!
+                </p>
+
+                <p>
+                    Enter the 6-digit verification code
+                    to complete your registration.
+                </p>
+
+                <p id="verificationEmail"
+                   class="verification-email"></p>
+
+                <!-- OTP INPUTS -->
+                <div class="verification-inputs">
+
+                    <input class="otp-input"
+                           inputmode="numeric"
+                           maxlength="1"
+                           aria-label="Digit 1">
+
+                    <input class="otp-input"
+                           inputmode="numeric"
+                           maxlength="1"
+                           aria-label="Digit 2">
+
+                    <input class="otp-input"
+                           inputmode="numeric"
+                           maxlength="1"
+                           aria-label="Digit 3">
+
+                    <input class="otp-input"
+                           inputmode="numeric"
+                           maxlength="1"
+                           aria-label="Digit 4">
+
+                    <input class="otp-input"
+                           inputmode="numeric"
+                           maxlength="1"
+                           aria-label="Digit 5">
+
+                    <input class="otp-input"
+                           inputmode="numeric"
+                           maxlength="1"
+                           aria-label="Digit 6">
+
+                </div>
+
+                <!-- DEMO CODE -->
+                <p class="demo-code">
+                    Demo verification code:
+                    <strong id="demoVerificationCode"></strong>
+                </p>
+
+                <p id="verificationError"
+                   class="register-error"
+                   role="alert"
+                   hidden></p>
+
+                <button
+                    type="button"
+                    id="verifyAccountBtn"
+                    class="register-btn full-btn">
+
+                    Verify Account
+
+                </button>
+
+                <p class="verify-help">
+                    Didn't receive a code?
+                </p>
+
+                <button
+                    type="button"
+                    id="resendCodeBtn"
+                    class="resend-btn">
+
+                    Resend Code
+
+                </button>
+
+                <button
+                    type="button"
+                    id="backToRegisterBtn"
+                    class="back-register-btn">
+
+                    Back to Registration
+
+                </button>
+
+                <p class="register-note">
+                    School project demo: no verification
+                    email is sent.
+                </p>
+
+            </div>
+
+        </section>
+
+        <!-- SCREEN 3: ACCOUNT SUCCESS -->
+        <section id="successScreen"
+                 class="register-screen"
+                 hidden>
+
+            <div class="register-card success-card">
+
+                <h1>
+                    Account Successfully Created!
+                </h1>
+
+                <div class="success-icon">
+                    <i class="bi bi-patch-check-fill"></i>
+                </div>
+
+                <h2>Welcome to RailEasy!</h2>
+
+                <p>
+                    Your account has been created
+                    successfully.
+                </p>
+
+                <p>
+                    You can now explore RailEasy
+                    and make your demo reservations.
+                </p>
+
+                <a href="main.html"
+                   class="register-btn get-started-btn">
+
+                    Get Started
+
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer id="contact">
+
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col-md-8">
+
+                    <h5>Contact Us!</h5>
+
+                    <p>
+                        <i class="bi bi-envelope"></i>
+                        raileasy.help@gmail.com
+                    </p>
+
+                    <p>
+                        <i class="bi bi-telephone"></i>
+                        +63 91234567890
+                    </p>
+
+                </div>
+
+                <div class="col-md-4">
+
+                    <h5>Quick Links</h5>
+
+                    <a href="index.html">Home</a>
+                    <a href="fare.html">Fare Matrix</a>
+                    <a href="about.html">About Us</a>
+                    <a href="contact.html">Contact Us</a>
+                    <a href="login.html">Sign In</a>
+
+                </div>
+
+            </div>
+
+            <div class="copyright">
+                &copy; <span id="year"></span>
+                RailEasy
+            </div>
+
+        </div>
+
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="register.js"></script>
+    <script src="nav.js"></script>
+
+</body>
+</html>

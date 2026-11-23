@@ -1,0 +1,866 @@
+/* =====================================
+   RAILEASY MY RESERVATIONS
+===================================== */
+
+.reservations-page {
+    background: white;
+    color: #242b35;
+    font-family: Arial, sans-serif;
+}
+
+/* HIDE INACTIVE SCREENS */
+.res-screen[hidden],
+.res-modal[hidden] {
+    display: none !important;
+}
+
+.res-screen {
+    min-height: 610px;
+}
+
+/* PAGE HEADINGS */
+.res-screen h1 {
+    color: #34699e;
+    font-size: 30px;
+    font-weight: 700;
+    text-align: center;
+}
+
+/* =====================================
+   BUTTON DESIGN
+===================================== */
+
+.res-button {
+    display: inline-block;
+    padding: 10px 18px;
+    background: #34699e;
+    color: white;
+    border: 0;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    box-shadow: 0 2px 4px #0003;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+}
+
+.res-button:hover {
+    background: #225580;
+    color: white;
+}
+
+.res-button-outline {
+    background: white;
+    color: #263543;
+    border: 1px solid #999;
+}
+
+.res-button-outline:hover {
+    background: #e8eef4;
+    color: #263543;
+}
+
+.res-button-red {
+    background: #bd2027;
+}
+
+.res-button-red:hover {
+    background: #951820;
+}
+
+.res-button-small {
+    font-size: 11px;
+    padding: 8px 13px;
+    background: #64a5c3;
+}
+
+.res-button-small:hover {
+    background: #4f8fac;
+}
+
+/* =====================================
+   MY RESERVATIONS MAIN SCREEN
+===================================== */
+
+.res-list-screen {
+    position: relative;
+    isolation: isolate;
+    padding: 40px 12px 85px;
+}
+
+/* FADED TRAIN BACKGROUND */
+.res-list-screen::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+
+    background:
+        linear-gradient(
+            rgba(255,255,255,0.83),
+            rgba(255,255,255,0.86)
+        ),
+        url("images/train.jpg")
+        center / cover no-repeat;
+}
+
+.res-container {
+    max-width: 1050px;
+}
+
+.res-subtitle {
+    text-align: center;
+    font-size: 15px;
+    margin: 8px 0 28px;
+}
+
+/* =====================================
+   RESERVATIONS / CANCELED TABS
+===================================== */
+
+.res-tabs {
+    display: flex;
+    gap: 14px;
+    margin: 0 0 25px;
+}
+
+.res-tab {
+    min-width: 145px;
+    padding: 9px 15px;
+    background: #aaa;
+    border: 1px solid #777;
+    border-radius: 6px;
+    color: white;
+    font-size: 13px;
+    font-weight: 600;
+    box-shadow: 0 2px 3px #0002;
+    cursor: pointer;
+}
+
+.res-tab.selected {
+    background: #64a5c3;
+    border-color: #386b8a;
+}
+
+.res-tab:hover {
+    filter: brightness(0.93);
+}
+
+/* =====================================
+   RESERVATION GROUP HEADINGS
+===================================== */
+
+.res-group {
+    margin-bottom: 35px;
+}
+
+.res-group h2 {
+    color: #333;
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0 0 14px;
+}
+
+.res-group.is-past h2 {
+    color: #666;
+}
+
+/* =====================================
+   RESERVATION CARD GRID
+===================================== */
+
+.res-card-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 22px 30px;
+    max-width: 795px;
+}
+
+/* INDIVIDUAL RESERVATION CARD */
+.res-card {
+    background: white;
+    border: 1px solid #a5a5a5;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 3px 5px #0002;
+}
+
+/* BLUE CARD HEADER */
+.res-card-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+
+    padding: 9px 12px;
+    background: #34699e;
+    color: white;
+
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.res-card-head span:first-child {
+    min-width: 0;
+    overflow-wrap: anywhere;
+}
+
+/* CARD BODY */
+.res-card-body {
+    padding: 16px 14px 12px;
+}
+
+/* ROUTE */
+.res-card-route {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.res-card-stop {
+    min-width: 0;
+}
+
+.res-card-stop:last-child {
+    text-align: right;
+}
+
+.res-card-stop strong {
+    display: block;
+    font-size: 16px;
+}
+
+.res-card-stop small {
+    display: block;
+    color: #34699e;
+    font-size: 10px;
+}
+
+.res-card-route > i {
+    color: #397db3;
+    font-size: 24px;
+}
+
+/* CARD FOOTER */
+.res-card-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: 8px;
+    margin-top: 9px;
+}
+
+.res-card-bottom small {
+    display: block;
+    color: #58616b;
+    font-size: 10px;
+    margin-top: 4px;
+}
+
+/* =====================================
+   RESERVATION STATUS TAGS
+===================================== */
+
+/* GENERAL TAG */
+.res-badge {
+    display: inline-block;
+    padding: 3px 12px;
+    border-radius: 12px;
+    background: #249f50;
+    color: white;
+    font-size: 10px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+/* RED CANCELLED TAG */
+.res-badge-canceled {
+    background: #bd303b;
+}
+
+/* GRAY EXPIRED TAG */
+.res-badge-expired {
+    background: #878787;
+}
+
+/* =====================================
+   EMPTY RESERVATIONS
+===================================== */
+
+.res-empty {
+    padding: 38px 22px;
+    background: white;
+    border: 1px solid #d9e1e9;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 520px;
+    margin: 30px auto;
+}
+
+.res-empty i {
+    color: #34699e;
+    font-size: 40px;
+}
+
+.res-empty h2 {
+    color: #34699e;
+    font-size: 20px;
+}
+
+/* =====================================
+   RESERVATION DETAILS SCREEN
+===================================== */
+
+.res-details-screen {
+    padding: 40px 16px 85px;
+    background: white;
+}
+
+.res-details-container {
+    position: relative;
+    max-width: 950px;
+}
+
+.res-back-arrow {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    border: 0;
+    background: none;
+    color: #34699e;
+
+    font-size: 26px;
+    cursor: pointer;
+}
+
+/* UPDATED RESERVATION DETAILS TITLE */
+.res-details-screen h1 {
+    color: #34699e;
+    font-size: 32px;
+    font-weight: bold;
+    text-align: center;
+    margin: 7px 0 20px;
+}
+
+/* EXPIRED RESERVATION WARNING */
+.res-details-notice {
+    color: #c63437;
+    font-size: 13px;
+    font-style: italic;
+    text-align: center;
+    margin: 0 0 16px;
+}
+
+.res-details-notice[hidden] {
+    display: none;
+}
+
+/* ACTION BUTTONS */
+.res-detail-actions {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 21px;
+}
+
+/* =====================================
+   RAILEASY TICKET DESIGN
+===================================== */
+
+.res-ticket {
+    position: relative;
+    width: min(100%, 530px);
+    margin: 0 auto;
+
+    background: white;
+    border: 1px solid #c5c5c5;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px #0002;
+}
+
+/* BLUE TICKET SECTION */
+.res-ticket-blue {
+    position: relative;
+    padding: 36px 43px 18px 22px;
+    background: #34699e;
+    color: white;
+}
+
+/* =====================================
+   NEW CANCELLED / PAST TRIP TAGS
+===================================== */
+
+/* CANCELLED TAG ON TICKET */
+.res-ticket-cancel-tag {
+    position: absolute;
+    top: 9px;
+    left: 20px;
+
+    background: #c62828;
+    color: white;
+
+    padding: 5px 13px;
+    border-radius: 20px;
+
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+/* PAST TRIP TAG ON TICKET */
+.res-ticket-past-tag {
+    position: absolute;
+    top: 9px;
+    left: 20px;
+
+    background: #858585;
+    color: white;
+
+    padding: 5px 13px;
+    border-radius: 20px;
+
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+/* NON-TRANSFERABLE LABEL */
+.res-ticket-nontransferable {
+    position: absolute;
+    top: 10px;
+    right: 13px;
+
+    color: #e7f2ff;
+    font-size: 9px;
+    letter-spacing: 0.5px;
+}
+
+/* VERTICAL TRAIN LOGO + RAILEASY */
+.res-ticket-brand {
+    position: absolute;
+    right: 9px;
+    top: 43px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+
+    color: #e6f3ff;
+    font-size: 10px;
+    letter-spacing: 1px;
+}
+
+.res-ticket-brand span {
+    writing-mode: vertical-rl;
+}
+
+/* =====================================
+   TICKET PASSENGER INFORMATION
+===================================== */
+
+.res-ticket-info {
+    display: flex;
+    justify-content: space-between;
+    gap: 14px;
+    margin-bottom: 15px;
+}
+
+.res-ticket-info > div {
+    min-width: 0;
+    max-width: 57%;
+}
+
+.res-ticket-info > div:last-child {
+    text-align: right;
+}
+
+.res-ticket-info small,
+.res-ticket-white small {
+    display: block;
+    font-size: 10px;
+    margin-bottom: 4px;
+}
+
+.res-ticket-info strong {
+    display: block;
+    font-size: 13px;
+    overflow-wrap: anywhere;
+}
+
+/* =====================================
+   FROM AND TO STATIONS
+===================================== */
+
+.res-ticket-route {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+
+.res-ticket-route > div:last-child {
+    text-align: right;
+}
+
+.res-ticket-route strong {
+    display: block;
+    font-size: 27px;
+}
+
+.res-ticket-route span {
+    font-size: 11px;
+}
+
+.res-ticket-route i {
+    font-size: 29px;
+}
+
+/* =====================================
+   WHITE TICKET SECTION
+===================================== */
+
+.res-ticket-white {
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr 100px;
+
+    gap: 12px;
+    padding: 17px 22px 21px;
+    align-items: center;
+}
+
+.res-ticket-white small {
+    color: #34699e;
+    font-weight: 700;
+}
+
+.res-ticket-white strong {
+    display: block;
+    font-size: 12px;
+    margin-bottom: 10px;
+    color: #293e4e;
+    overflow-wrap: anywhere;
+}
+
+/* FARE */
+.res-ticket-white .res-ticket-fare {
+    font-size: 28px;
+    color: #34699e;
+}
+
+/* CONFIRMED STATUS */
+.res-ticket-white .res-status-active {
+    color: #249f50;
+}
+
+/* CANCELLED STATUS */
+.res-ticket-white .res-status-canceled {
+    color: #c62828;
+}
+
+/* PAST TRIP STATUS */
+.res-ticket-white .res-status-expired {
+    color: #777;
+}
+
+/* =====================================
+   TICKET QR CODE
+===================================== */
+
+.res-qr {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 90px;
+    font-size: 10px;
+    color: #5d6b79;
+}
+
+.res-qr img,
+.res-qr canvas {
+    width: 88px !important;
+    height: 88px !important;
+    max-width: 88px;
+}
+
+.res-qr-note {
+    font-size: 9px;
+    text-align: center;
+    margin-top: 6px;
+    color: #777;
+}
+
+/* =====================================
+   CANCELLED RESERVATION SUMMARY
+===================================== */
+
+.res-summary-card {
+    max-width: 590px;
+    margin: 0 auto;
+
+    background: white;
+    border: 1px solid #888;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px #0002;
+    overflow: hidden;
+}
+
+/* SUMMARY HEADER */
+.res-summary-head {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+
+    padding: 9px 14px;
+    border-bottom: 1px solid #ccc;
+
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.res-summary-head strong {
+    color: #34699e;
+}
+
+/* SUMMARY BODY */
+.res-summary-body {
+    padding: 14px 18px;
+}
+
+.res-summary-route {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    color: #34699e;
+}
+
+.res-summary-route > div:last-child {
+    text-align: right;
+}
+
+.res-summary-route strong {
+    display: block;
+    font-size: 21px;
+}
+
+.res-summary-route small {
+    display: block;
+    color: #526a82;
+    font-size: 11px;
+}
+
+.res-summary-meta {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    font-size: 12px;
+    margin-top: 12px;
+}
+
+/* CANCELLED WARNING */
+.res-summary-foot {
+    background: #fafafa;
+    border-top: 1px solid #ccc;
+    color: #a52929;
+    padding: 9px;
+    text-align: center;
+    font-size: 11px;
+}
+
+/* =====================================
+   CANCEL RESERVATION MODAL
+===================================== */
+
+.res-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 3000;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 18px;
+    background: rgba(0,0,0,0.36);
+    backdrop-filter: blur(3px);
+}
+
+/* MODAL CONTAINER */
+.res-modal-box {
+    width: min(100%, 500px);
+    padding: 26px 28px;
+
+    background: #f4f1eb;
+    border: 1px solid #777;
+    border-radius: 14px;
+    color: #111;
+
+    text-align: center;
+    box-shadow: 0 5px 12px #0003;
+}
+
+/* RED WARNING ICON */
+.res-warning-icon {
+    display: block;
+    color: #ef3939;
+    font-size: 40px;
+    margin-bottom: 8px;
+}
+
+.res-modal-box h2 {
+    font-size: 23px;
+    font-weight: 750;
+}
+
+.res-modal-box p {
+    font-size: 15px;
+    margin: 8px 0 20px;
+    line-height: 1.4;
+}
+
+/* MODAL BUTTONS */
+.res-modal-actions {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* =====================================
+   CANCELLATION SUCCESS SCREEN
+===================================== */
+
+.res-success-screen {
+    padding: 40px 15px 85px;
+
+    background: url("images/auth-bg.svg")
+        center / cover no-repeat;
+}
+
+.res-success-content {
+    text-align: center;
+}
+
+/* GREEN CHECK ICON */
+.res-green-check {
+    display: block;
+    color: #58df49;
+    font-size: 55px;
+    margin-bottom: 8px;
+}
+
+.res-success-content h1 {
+    color: #111;
+    margin-bottom: 7px;
+}
+
+.res-success-content > p {
+    font-size: 16px;
+    margin-bottom: 26px;
+}
+
+.res-success-content .res-button {
+    margin-top: 18px;
+}
+
+/* =====================================
+   RESPONSIVE DESIGN
+===================================== */
+
+@media (max-width: 700px) {
+
+    .res-screen h1 {
+        font-size: 26px;
+    }
+
+    .res-card-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .res-list-screen {
+        padding: 35px 10px 60px;
+    }
+
+    .res-tab {
+        min-width: 0;
+        flex: 1;
+    }
+
+    .res-details-screen {
+        padding: 40px 10px 65px;
+    }
+
+    .res-back-arrow {
+        position: static;
+        display: block;
+        margin-bottom: 8px;
+    }
+
+    .res-ticket-blue {
+        padding: 36px 38px 14px 14px;
+    }
+
+    .res-ticket-info strong {
+        font-size: 11px;
+    }
+
+    .res-ticket-white {
+        grid-template-columns:
+            1fr 1fr 77px;
+
+        padding: 12px;
+        gap: 7px;
+    }
+
+    .res-qr img,
+    .res-qr canvas {
+        width: 66px !important;
+        height: 66px !important;
+    }
+
+    .res-summary-head,
+    .res-summary-meta {
+        font-size: 11px;
+    }
+
+    .res-modal-box {
+        padding: 25px 16px;
+    }
+
+    .res-modal-box h2 {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 380px) {
+
+    .res-ticket-white {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .res-qr {
+        grid-column: 1 / -1;
+    }
+
+    .res-ticket-route strong {
+        font-size: 21px;
+    }
+
+    .res-ticket-cancel-tag,
+    .res-ticket-past-tag {
+        left: 12px;
+        font-size: 9px;
+    }
+}

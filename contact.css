@@ -1,0 +1,639 @@
+/* =====================================
+   RAILEASY CONTACT US PAGE
+===================================== */
+
+.contact-page {
+    margin: 0;
+    background: #fff;
+    color: #222;
+    font-family: Arial, sans-serif;
+}
+
+/* =====================================
+   CONTACT US HERO
+===================================== */
+
+.contact-hero {
+    position: relative;
+    isolation: isolate;
+
+    min-height: 310px;
+    padding: 110px 20px 90px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+    overflow: hidden;
+}
+
+/* TRAIN BACKGROUND */
+.contact-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+
+    background: url("images/train.jpg")
+        center 50% / cover no-repeat;
+}
+
+/* DARK OVERLAY */
+.contact-hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+
+    background: rgba(0, 0, 0, 0.36);
+}
+
+.contact-hero h1 {
+    color: white;
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.contact-hero p {
+    color: white;
+    font-size: 17px;
+    margin: 0;
+}
+
+/* =====================================
+   MAIN CONTACT CONTENT
+===================================== */
+
+.contact-content {
+    min-height: 540px;
+    padding: 48px 20px 60px;
+
+    background: url("images/auth-bg.svg")
+        center center / cover no-repeat;
+}
+
+/* TWO COLUMN LAYOUT */
+.contact-grid {
+    display: grid;
+    grid-template-columns:
+        minmax(0, 1fr)
+        minmax(0, 1fr);
+
+    gap: 30px;
+
+    max-width: 900px;
+    margin: 0 auto;
+
+    align-items: start;
+}
+
+/* =====================================
+   FORM CARD
+===================================== */
+
+.contact-form-card {
+    background: white;
+    border: 1px solid #c5c5c5;
+    border-radius: 13px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px #0002;
+}
+
+.contact-form-card h2 {
+    color: #34699e;
+    font-size: 22px;
+    font-weight: bold;
+
+    text-align: center;
+    padding: 15px 12px;
+    margin: 0;
+
+    border-bottom: 1px solid #ddd;
+}
+
+#feedbackForm {
+    padding: 22px 25px 25px;
+}
+
+/* FORM FIELD */
+.contact-field {
+    margin-bottom: 17px;
+}
+
+.contact-field label {
+    display: block;
+    margin-bottom: 6px;
+
+    color: #222;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+/* REQUIRED ASTERISK */
+.contact-field label span {
+    color: #d43b3b;
+}
+
+/* TEXT INPUTS */
+.contact-field input,
+.contact-field textarea {
+    display: block;
+    width: 100%;
+
+    padding: 10px 11px;
+
+    background: white;
+    color: #333;
+
+    border: 1px solid #aaa;
+    border-radius: 5px;
+
+    font-size: 13px;
+    box-shadow: 0 2px 4px #0002;
+}
+
+.contact-field input {
+    height: 39px;
+}
+
+/* MESSAGE BOX */
+.contact-field textarea {
+    min-height: 105px;
+    resize: vertical;
+    line-height: 1.5;
+}
+
+/* INPUT FOCUS */
+.contact-field input:focus,
+.contact-field textarea:focus {
+    outline: 2px solid #a3d0f5;
+    border-color: #34699e;
+}
+
+/* ERROR MESSAGE */
+.feedback-error {
+    padding: 10px;
+    margin: 10px 0;
+
+    background: #fff0f0;
+    color: #ad2727;
+
+    border-radius: 5px;
+    font-size: 12px;
+}
+
+.feedback-error[hidden] {
+    display: none;
+}
+
+/* SUBMIT BUTTON */
+.submit-feedback-btn {
+    display: block;
+    width: 160px;
+    max-width: 100%;
+
+    margin: 16px 0 0;
+    padding: 11px 14px;
+
+    background: #65a5c3;
+    color: white;
+
+    border: 1px solid #357da3;
+    border-radius: 6px;
+
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+
+    box-shadow: 0 2px 4px #0002;
+}
+
+.submit-feedback-btn:hover {
+    background: #488dad;
+}
+
+/* =====================================
+   RIGHT SIDE CONTENT
+===================================== */
+
+.contact-info-column {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+/* WHITE INFORMATION CARDS */
+.contact-info-card {
+    background: white;
+
+    border: 1px solid #c5c5c5;
+    border-radius: 13px;
+
+    padding: 19px 21px;
+    box-shadow: 0 2px 5px #0001;
+}
+
+.contact-info-card h2 {
+    color: #34699e;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+/* ANNOUNCEMENTS */
+.announcement-disclaimer {
+    font-size: 10px;
+    color: #777;
+    margin-top: -8px;
+    margin-bottom: 16px;
+}
+
+.announcement {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.announcement > i {
+    color: #34699e;
+    font-size: 25px;
+    margin-top: 4px;
+}
+
+.announcement > div {
+    flex: 1;
+    min-width: 0;
+}
+
+.announcement h3 {
+    color: #222;
+    font-size: 15px;
+    font-weight: 700;
+    margin: 0 0 4px;
+}
+
+.announcement p {
+    color: #6c6c6c;
+    font-size: 12px;
+    line-height: 1.4;
+    margin: 0 0 5px;
+}
+
+/* LEARN MORE BUTTON */
+.announcement-link {
+    display: inline-block;
+    padding: 0;
+
+    background: transparent;
+    border: 0;
+
+    color: #34699e;
+    font-size: 12px;
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+.announcement-link:hover {
+    text-decoration: underline;
+}
+
+.announcement .announcement-details {
+    margin-top: 10px;
+    padding: 10px;
+
+    background: #eaf3fa;
+    color: #36516c;
+
+    border-radius: 6px;
+    font-size: 11px;
+}
+
+.announcement-details[hidden] {
+    display: none;
+}
+
+/* DIVIDER */
+.contact-info-card hr {
+    border: 0;
+    border-top: 1px solid #ccc;
+    opacity: 1;
+    margin: 16px 0;
+}
+
+/* =====================================
+   WE'RE HERE TO HELP CARD
+===================================== */
+
+.help-card h2 {
+    margin-bottom: 8px;
+}
+
+.help-card > p {
+    color: #777;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.help-email {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    margin-top: 15px;
+
+    color: #555;
+    font-size: 12px;
+}
+
+.help-email i {
+    color: #34699e;
+    font-size: 22px;
+}
+
+/* =====================================
+   PROJECT PRIVACY GRAPHICS
+===================================== */
+
+.contact-privacy {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 20px;
+
+    padding: 5px 10px;
+}
+
+.privacy-seal,
+.railway-seal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+
+    text-align: center;
+    font-size: 10px;
+}
+
+/* DEMO PRIVACY BADGE */
+.privacy-seal {
+    width: 95px;
+    min-height: 105px;
+
+    border: 3px solid #34699e;
+    border-radius: 50%;
+
+    background: #fff;
+    color: #34699e;
+}
+
+.privacy-seal i {
+    font-size: 29px;
+}
+
+.privacy-seal strong {
+    font-size: 12px;
+}
+
+.privacy-seal span {
+    font-size: 9px;
+}
+
+/* RAILWAY LOGO */
+.railway-seal {
+    width: 110px;
+    min-height: 100px;
+    color: #34699e;
+}
+
+.railway-seal i {
+    font-size: 45px;
+}
+
+.railway-seal strong {
+    font-size: 15px;
+}
+
+.railway-seal span {
+    font-size: 9px;
+}
+
+/* =====================================
+   FEEDBACK SUCCESS POPUP
+===================================== */
+
+.feedback-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 4000;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+
+    background: rgba(0, 0, 0, 0.28);
+    backdrop-filter: blur(3px);
+}
+
+/* HIDE MODAL */
+.feedback-modal[hidden] {
+    display: none !important;
+}
+
+/* MODAL BOX */
+.feedback-modal-box {
+    position: relative;
+
+    width: min(100%, 490px);
+
+    padding: 32px 35px 28px;
+
+    background: #f4f1eb;
+    border: 1px solid #999;
+    border-radius: 13px;
+
+    text-align: center;
+    box-shadow: 0 5px 12px #0003;
+}
+
+/* CLOSE X BUTTON */
+.feedback-close {
+    position: absolute;
+    top: 12px;
+    right: 13px;
+
+    background: transparent;
+    border: 0;
+
+    color: #555;
+    font-size: 17px;
+    cursor: pointer;
+}
+
+.feedback-close:hover {
+    color: #111;
+}
+
+/* GREEN CHECK */
+.feedback-success-icon {
+    color: #5be44b;
+    font-size: 50px;
+    line-height: 1;
+    margin-bottom: 15px;
+}
+
+/* MODAL TITLE */
+.feedback-modal-box h2 {
+    color: #111;
+    font-size: 23px;
+    font-weight: 750;
+    margin-bottom: 8px;
+}
+
+/* MODAL DESCRIPTION */
+.feedback-modal-box p {
+    color: #333;
+    font-size: 15px;
+    line-height: 1.5;
+    margin-bottom: 12px;
+}
+
+.feedback-modal-box .feedback-demo-note {
+    color: #777;
+    font-size: 11px;
+}
+
+/* BACK TO HOME BUTTON */
+.feedback-home-btn {
+    display: inline-block;
+
+    margin-top: 8px;
+    padding: 11px 27px;
+
+    background: #34699e;
+    color: white;
+
+    border-radius: 6px;
+    text-decoration: none;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    box-shadow: 0 2px 4px #0003;
+}
+
+.feedback-home-btn:hover {
+    background: #245580;
+    color: white;
+}
+
+/* =====================================
+   FOOTER
+===================================== */
+
+.contact-page footer {
+    background: #34699e;
+    color: white;
+
+    padding: 32px 0 12px;
+}
+
+.contact-page footer h5 {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.contact-page footer p {
+    font-size: 12px;
+    margin: 8px 0;
+}
+
+.contact-page footer a {
+    display: block;
+    color: white;
+
+    font-size: 12px;
+    text-decoration: none;
+
+    margin: 5px 0;
+}
+
+.contact-page footer a:hover {
+    text-decoration: underline;
+}
+
+.contact-page .copyright {
+    text-align: center;
+    font-size: 11px;
+    margin-top: 27px;
+}
+
+/* =====================================
+   RESPONSIVE DESIGN
+===================================== */
+
+@media (max-width: 768px) {
+
+    .contact-hero {
+        min-height: 250px;
+        padding: 75px 15px;
+    }
+
+    .contact-hero h1 {
+        font-size: 29px;
+    }
+
+    .contact-hero p {
+        font-size: 14px;
+    }
+
+    .contact-content {
+        padding: 35px 15px 50px;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+        max-width: 480px;
+        gap: 22px;
+    }
+
+    .contact-form-card h2 {
+        font-size: 20px;
+    }
+
+    .contact-info-card h2 {
+        font-size: 19px;
+    }
+
+    .feedback-modal-box {
+        padding: 30px 20px 25px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .contact-hero {
+        min-height: 220px;
+    }
+
+    #feedbackForm {
+        padding: 19px;
+    }
+
+    .contact-page footer {
+        text-align: center;
+    }
+
+    .feedback-modal-box h2 {
+        font-size: 20px;
+    }
+
+    .feedback-modal-box p {
+        font-size: 13px;
+    }
+}

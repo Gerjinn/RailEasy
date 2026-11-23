@@ -1,0 +1,507 @@
+/* =====================================
+   RAILEASY REGISTER PAGE
+===================================== */
+
+.register-page {
+    margin: 0;
+    background: white;
+    font-family: Arial, sans-serif;
+}
+
+/* HIDDEN SCREENS */
+.register-screen[hidden] {
+    display: none !important;
+}
+
+/* =====================================
+   REGISTRATION BACKGROUND
+===================================== */
+
+.register-main {
+    min-height: 620px;
+    padding: 65px 20px 100px;
+
+    background: url("images/auth-bg.svg")
+        center / cover no-repeat;
+}
+
+/* REGISTER CARD */
+.register-card {
+    width: 100%;
+    max-width: 740px;
+    margin: 0 auto;
+
+    padding: 30px 35px;
+
+    background: white;
+    border: 1px solid #bdbdbd;
+    border-radius: 14px;
+
+    box-shadow: 0 3px 5px rgba(0,0,0,0.18);
+}
+
+/* TITLE */
+.register-card h1 {
+    color: #34699e;
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+/* =====================================
+   PERSONAL INFORMATION
+===================================== */
+
+.register-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.register-field {
+    margin-bottom: 18px;
+}
+
+.register-field label {
+    display: block;
+
+    color: #222;
+    font-size: 13px;
+    font-weight: 500;
+
+    margin-bottom: 7px;
+}
+
+/* INPUT DESIGN */
+.register-field input {
+    display: block;
+    width: 100%;
+    height: 43px;
+
+    padding: 10px 12px;
+
+    background: white;
+    color: #333;
+
+    border: 1px solid #aaa;
+    border-radius: 6px;
+
+    font-size: 13px;
+
+    box-shadow: 0 2px 4px rgba(0,0,0,0.13);
+}
+
+.register-field input:focus {
+    outline: 2px solid #a8d5ff;
+    border-color: #34699e;
+}
+
+/* EMAIL */
+.email-field {
+    max-width: 460px;
+    margin-top: 10px;
+}
+
+/* =====================================
+   PASSWORD AND CONFIRM PASSWORD
+===================================== */
+
+.register-password-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+/* PASSWORD INPUT CONTAINER */
+.password-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+/* MAKE SPACE FOR EYE ICON */
+.password-wrapper input {
+    width: 100%;
+    padding-right: 48px !important;
+}
+
+/* =====================================
+   WORKING EYE ICON BUTTON
+===================================== */
+
+.password-toggle {
+    position: absolute;
+
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 32px;
+    height: 32px;
+
+    background: transparent;
+    border: none;
+    border-radius: 5px;
+
+    color: #34699e;
+    cursor: pointer;
+
+    padding: 0;
+    z-index: 2;
+}
+
+/* EYE ICON */
+.password-toggle i {
+    font-size: 19px;
+    pointer-events: none;
+}
+
+/* HOVER EFFECT */
+.password-toggle:hover {
+    background: #eef5fc;
+    color: #225580;
+}
+
+/* FOCUS */
+.password-toggle:focus-visible {
+    outline: 2px solid #34699e;
+    outline-offset: 2px;
+}
+
+/* =====================================
+   REGISTER BUTTON
+===================================== */
+
+.register-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: 8px;
+}
+
+/* MAIN BUTTON */
+.register-btn {
+    display: inline-block;
+
+    min-width: 210px;
+    padding: 12px 24px;
+
+    background: #34699e;
+    color: white;
+
+    border: none;
+    border-radius: 7px;
+
+    font-size: 15px;
+    font-weight: bold;
+
+    text-align: center;
+    text-decoration: none;
+
+    box-shadow: 0 3px 5px rgba(0,0,0,0.18);
+    cursor: pointer;
+}
+
+.register-btn:hover {
+    background: #245580;
+    color: white;
+}
+
+.register-btn:disabled {
+    opacity: 0.6;
+    cursor: wait;
+}
+
+/* GOOGLE DEMO BUTTON */
+.google-btn {
+    width: 38px;
+    height: 38px;
+
+    border: 1px solid #ddd;
+    border-radius: 50%;
+
+    background: white;
+    color: #4285f4;
+
+    font-size: 22px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.google-btn:hover {
+    background: #f0f5ff;
+}
+
+/* SIGN IN TEXT */
+.register-signin {
+    margin-top: 18px;
+    color: #777;
+    font-size: 13px;
+}
+
+.register-signin a {
+    color: #34699e;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.register-signin a:hover {
+    text-decoration: underline;
+}
+
+/* VALIDATION MESSAGE */
+.register-error {
+    background: #fff0f0;
+    color: #bf2929;
+
+    padding: 10px;
+    border-radius: 5px;
+
+    font-size: 12px;
+    margin: 10px 0;
+}
+
+.register-error[hidden],
+.register-note[hidden] {
+    display: none;
+}
+
+.register-note {
+    color: #667586;
+    font-size: 12px;
+    margin-top: 12px;
+}
+
+/* =====================================
+   EMAIL VERIFICATION SCREEN
+===================================== */
+
+.verify-card {
+    max-width: 430px;
+    padding: 32px 30px;
+    text-align: center;
+}
+
+.verify-card h1 {
+    font-size: 22px;
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+.verify-card p {
+    color: #333;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.verification-email {
+    color: #34699e !important;
+    font-weight: bold;
+    overflow-wrap: anywhere;
+}
+
+/* SIX DIGIT CODE INPUTS */
+.verification-inputs {
+    display: flex;
+    justify-content: center;
+    gap: 7px;
+
+    margin: 22px 0;
+}
+
+.otp-input {
+    width: 40px;
+    height: 45px;
+
+    border: 1px solid #bbb;
+    border-radius: 5px;
+
+    background: white;
+    color: #222;
+
+    text-align: center;
+    font-size: 19px;
+    font-weight: bold;
+}
+
+.otp-input:focus {
+    outline: 2px solid #34699e;
+}
+
+/* DEMO VERIFICATION CODE */
+.demo-code {
+    background: #edf5fc;
+    padding: 10px;
+    border-radius: 6px;
+    color: #34699e !important;
+}
+
+.demo-code strong {
+    display: block;
+    font-size: 18px;
+    letter-spacing: 4px;
+}
+
+/* VERIFICATION BUTTONS */
+.full-btn {
+    width: 100%;
+}
+
+.verify-help {
+    margin: 15px 0 5px;
+}
+
+.resend-btn,
+.back-register-btn {
+    display: block;
+    width: 100%;
+
+    padding: 10px;
+
+    margin-top: 9px;
+    border: 1px solid #aaa;
+    border-radius: 6px;
+
+    background: white;
+    color: #34699e;
+
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.resend-btn:hover,
+.back-register-btn:hover {
+    background: #eaf4ff;
+}
+
+/* =====================================
+   ACCOUNT SUCCESS SCREEN
+===================================== */
+
+.success-card {
+    max-width: 410px;
+    padding: 35px 30px;
+    text-align: center;
+}
+
+.success-card h1 {
+    font-size: 23px;
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+.success-icon {
+    color: #5be448;
+    font-size: 60px;
+    margin: 15px auto;
+}
+
+.success-card h2 {
+    color: #34699e;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.success-card p {
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.get-started-btn {
+    margin-top: 15px;
+    width: 100%;
+}
+
+/* =====================================
+   FOOTER
+===================================== */
+
+.register-page footer {
+    background: #34699e;
+    color: white;
+    padding: 35px 0 12px;
+}
+
+.register-page footer h5 {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.register-page footer p {
+    font-size: 12px;
+}
+
+.register-page footer a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    font-size: 12px;
+    margin: 5px 0;
+}
+
+.register-page footer a:hover {
+    text-decoration: underline;
+}
+
+.register-page .copyright {
+    text-align: center;
+    margin-top: 25px;
+    font-size: 11px;
+}
+
+/* =====================================
+   RESPONSIVE DESIGN
+===================================== */
+
+@media (max-width: 768px) {
+
+    .register-main {
+        padding: 40px 15px 65px;
+    }
+
+    .register-card {
+        padding: 25px 20px;
+    }
+
+    .register-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .register-password-grid {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .register-card h1 {
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .register-grid {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .register-actions {
+        flex-wrap: wrap;
+    }
+
+    .register-btn {
+        min-width: 0;
+        flex: 1;
+    }
+
+    .otp-input {
+        width: 35px;
+        height: 42px;
+    }
+
+    .register-page footer {
+        text-align: center;
+    }
+}

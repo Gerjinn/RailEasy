@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign In - RailEasy</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="auth.css">
+</head>
+
+<body class="auth-page">
+
+  <!-- NAVIGATION BAR -->
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+
+      <a class="navbar-brand fw-bold" href="index.html">
+        <i class="bi bi-train-front-fill"></i> RailEasy
+      </a>
+
+      <button class="navbar-toggler" type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarMenu"
+              aria-controls="navbarMenu"
+              aria-expanded="false"
+              aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarMenu">
+
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="fare.html">Fare Matrix</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="index.html#contact">Contact Us</a>
+          </li>
+        </ul>
+
+        <a class="account-icon" href="login.html" aria-label="Sign in">
+          <i class="bi bi-person-circle"></i>
+        </a>
+
+      </div>
+    </div>
+  </nav>
+
+  <!-- SIGN IN BACKGROUND -->
+  <main class="auth-scene">
+    <div class="auth-card">
+
+      <!-- LOGIN SCREEN -->
+      <section id="loginPanel" class="auth-panel">
+
+        <h1>Welcome Back!</h1>
+
+        <p id="loginNotice" class="auth-notice"
+           role="status" hidden></p>
+
+        <form id="loginForm">
+
+          <label for="loginEmail">Email:</label>
+          <input
+            id="loginEmail"
+            type="email"
+            autocomplete="email"
+            placeholder="Enter your email"
+            required
+          >
+
+          <label for="loginPassword">Password:</label>
+
+          <div class="password-wrap">
+
+            <input
+              id="loginPassword"
+              type="password"
+              autocomplete="current-password"
+              placeholder="Enter your password"
+              required
+            >
+
+            <button type="button"
+                    class="show-password"
+                    id="showPassword"
+                    aria-label="Show password"
+                    aria-pressed="false">
+              <i class="bi bi-eye-slash"></i>
+            </button>
+
+          </div>
+
+          <div class="link-end">
+            <button type="button"
+                    class="text-link"
+                    data-screen="forgot">
+              Forgot Password?
+            </button>
+          </div>
+
+          <button class="auth-btn primary" type="submit">
+            Sign In
+          </button>
+
+        </form>
+
+        <p class="or-label">or use:</p>
+
+        <button type="button"
+                class="google-demo"
+                disabled
+                title="Google sign-in requires an authentication provider"
+                aria-label="Google sign-in unavailable in demo">
+          G
+        </button>
+
+        <p class="helper-text">
+          Google sign-in is unavailable in this demo.
+        </p>
+
+        <p class="bottom-note">
+          Don't have an account yet?
+          <a href="register.html">Register Now!</a>
+        </p>
+
+      </section>
+
+      <!-- FORGOT PASSWORD SCREEN -->
+      <section id="forgotPanel" class="auth-panel" hidden>
+
+        <h1>Forgot Password?</h1>
+
+        <p class="small-copy">
+          Enter the email you registered with RailEasy.
+        </p>
+
+        <p id="forgotMessage"
+           class="auth-notice error"
+           role="alert" hidden></p>
+
+        <form id="forgotForm">
+
+          <label for="forgotEmail">Email:</label>
+
+          <input
+            id="forgotEmail"
+            type="email"
+            placeholder="Enter your email"
+            autocomplete="email"
+            required
+          >
+
+          <button class="auth-btn primary" type="submit">
+            Continue
+          </button>
+
+        </form>
+
+        <button type="button"
+                class="auth-btn outline"
+                data-screen="login">
+          Back to Login
+        </button>
+
+      </section>
+
+      <!-- CHECK EMAIL SCREEN -->
+      <section id="checkPanel" class="auth-panel" hidden>
+
+        <h1>Check your Email!</h1>
+
+        <p class="small-copy">
+          Normally, a password-reset link would be
+          emailed to you.
+        </p>
+
+        <p class="demo-note">
+          <strong>Demo mode:</strong>
+          No email was sent. You can reset the test
+          account saved in this browser below.
+        </p>
+
+        <button type="button"
+                class="auth-btn primary"
+                data-screen="reset">
+          Reset Password (Demo)
+        </button>
+
+        <button type="button"
+                class="auth-btn outline"
+                data-screen="login">
+          Back to Login
+        </button>
+
+      </section>
+
+      <!-- SIGN IN FAILED SCREEN -->
+      <section id="failedPanel" class="auth-panel" hidden>
+
+        <h1>Unable to Sign In</h1>
+
+        <i class="bi bi-x-circle-fill status-icon error-icon"
+           aria-hidden="true"></i>
+
+        <p class="small-copy">
+          The email or password you entered is incorrect.
+          <br>
+          Please check your details and try again.
+        </p>
+
+        <p class="small-copy">
+          Don't have an account?
+          Register to get started!
+        </p>
+
+        <button type="button"
+                class="auth-btn primary"
+                data-screen="login">
+          Try Again
+        </button>
+
+        <a class="auth-btn outline" href="register.html">
+          Register
+        </a>
+
+      </section>
+
+      <!-- RESET PASSWORD SCREEN -->
+      <section id="resetPanel" class="auth-panel" hidden>
+
+        <h1>Reset Password</h1>
+
+        <p class="small-copy">
+          Create a new password for your saved demo account.
+        </p>
+
+        <p id="resetMessage"
+           class="auth-notice error"
+           role="alert" hidden></p>
+
+        <form id="resetForm">
+
+          <label for="newPassword">New Password:</label>
+
+          <input
+            id="newPassword"
+            type="password"
+            minlength="8"
+            autocomplete="new-password"
+            required
+          >
+
+          <label for="confirmNewPassword">
+            Confirm Password:
+          </label>
+
+          <input
+            id="confirmNewPassword"
+            type="password"
+            minlength="8"
+            autocomplete="new-password"
+            required
+          >
+
+          <button class="auth-btn primary" type="submit">
+            Save New Password
+          </button>
+
+        </form>
+
+        <button type="button"
+                class="auth-btn outline"
+                data-screen="login">
+          Back to Login
+        </button>
+
+      </section>
+
+      <!-- PASSWORD RESET SUCCESSFUL -->
+      <section id="successPanel" class="auth-panel" hidden>
+
+        <h1>Password Reset Successful!</h1>
+
+        <i class="bi bi-check-circle-fill status-icon success-icon"
+           aria-hidden="true"></i>
+
+        <p class="small-copy">
+          Your demo password has been successfully updated.
+        </p>
+
+        <p class="small-copy">
+          You can now sign in to your RailEasy account
+          using your new password.
+        </p>
+
+        <button type="button"
+                class="auth-btn outline"
+                data-screen="login">
+          Back to Login
+        </button>
+
+      </section>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer id="contact">
+    <div class="container">
+
+      <div class="row">
+
+        <div class="col-md-8">
+
+          <h5>Contact Us!</h5>
+
+          <p>
+            <i class="bi bi-envelope"></i>
+            raileasy.help@gmail.com
+          </p>
+
+          <p>
+            <i class="bi bi-telephone"></i>
+            +63 91234567890
+          </p>
+
+        </div>
+
+        <div class="col-md-4">
+
+          <h5>Quick Links</h5>
+
+          <a href="index.html">Home</a>
+          <a href="fare.html">Fare Matrix</a>
+          <a href="about.html">About Us</a>
+          <a href="register.html">Sign Up</a>
+
+        </div>
+
+      </div>
+
+      <div class="copyright">
+        &copy; <span id="year"></span> RailEasy
+      </div>
+
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script src="auth.js"></script>
+
+<!-- Shared RailEasy Navigation -->
+<script src="nav.js"></script>
+
+</body>
+</html>

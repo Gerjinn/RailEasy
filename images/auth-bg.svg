@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 1400 740"
+     preserveAspectRatio="xMidYMid slice">
+
+  <defs>
+    <linearGradient id="wave" x1="0" y1="0" x2="1" y2="0">
+      <stop stop-color="#d9ebfc"/>
+      <stop offset="1" stop-color="#89b7e0"/>
+    </linearGradient>
+
+    <pattern id="dots"
+             width="17" height="17"
+             patternUnits="userSpaceOnUse">
+      <circle cx="4" cy="4" r="2.5"
+              fill="#98c9f3" opacity=".68"/>
+    </pattern>
+  </defs>
+
+  <rect width="1400" height="740" fill="#fff"/>
+
+  <!-- TOP LEFT WAVES -->
+  <path d="M0 0H555C360 44 262 89 143 78C76 72 36 93 0 130Z"
+        fill="#e2f1ff"/>
+
+  <path d="M0 0H460C308 40 246 57 120 56C69 57 21 75 0 94"
+        fill="none" stroke="#b8d7f4"
+        stroke-width="23" opacity=".9"/>
+
+  <path d="M0 148C70 42 182 45 282 47C368 48 438 15 510 0"
+        fill="none" stroke="#fff" stroke-width="4"/>
+
+  <!-- BLUE DOTS -->
+  <path d="M0 138C46 104 149 100 222 115L203 294L0 286Z"
+        fill="url(#dots)" opacity=".9"/>
+
+  <!-- RAILWAY TRACKS -->
+  <g transform="translate(1077,-170) rotate(-25)"
+     opacity=".6" stroke="#a8cff2" fill="none">
+
+    <path d="M0 0V610M154 0V610" stroke-width="12"/>
+
+    <path d="M-32 20H190M-32 66H190M-32 112H190M-32 158H190M-32 204H190M-32 250H190M-32 296H190M-32 342H190M-32 388H190M-32 434H190M-32 480H190M-32 526H190M-32 572H190"
+          stroke-width="16"/>
+  </g>
+
+  <!-- RIGHT SIDE DOTS -->
+  <path d="M1210 315H1400V550C1355 545 1312 514 1287 460Z"
+        fill="url(#dots)"/>
+
+  <!-- BOTTOM BLUE WAVES -->
+  <path d="M550 740C772 654 923 605 1060 638C1181 665 1301 614 1400 535V740Z"
+        fill="#e4f1ff"/>
+
+  <path d="M678 740C815 676 941 658 1066 676C1219 698 1320 641 1400 580V740Z"
+        fill="url(#wave)"/>
+
+  <path d="M659 740C820 672 956 655 1083 663C1233 673 1315 621 1400 561"
+        fill="none" stroke="#fff" stroke-width="4"/>
+
+  <!-- TRAIN ILLUSTRATION -->
+  <g transform="translate(-100,450) rotate(-7 240 220)"
+     fill="none" stroke="#bfd9f3" opacity=".96"
+     stroke-linejoin="round" stroke-linecap="round">
+
+    <path d="M0 284L34 80C43 39 90 10 171 9C294 7 368 64 412 162C434 205 439 261 415 278L0 323"
+          stroke-width="20"/>
+
+    <path d="M23 140C45 84 77 54 131 46C242 30 326 77 374 175"
+          stroke-width="15"/>
+
+    <path d="M98 64L70 212L152 215L168 47M186 42L172 216L300 216L256 61"
+          stroke-width="14"/>
+
+    <path d="M320 91L332 211L394 211"
+          stroke-width="12"/>
+
+    <path d="M30 250L408 248M0 301L430 295"
+          stroke-width="18"/>
+
+    <path d="M230 265L265 265"
+          stroke-width="20"/>
+
+    <path d="M350 265L375 264"
+          stroke-width="20"/>
+
+    <path d="M45 333L390 323M22 354L372 345"
+          stroke-width="7"/>
+  </g>
+
+</svg>

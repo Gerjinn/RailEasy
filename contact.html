@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Contact Us - RailEasy</title>
+
+    <!-- BOOTSTRAP -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+    <!-- BOOTSTRAP ICONS -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+        rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="contact.css">
+    <link rel="stylesheet" href="nav.css">
+</head>
+
+<body class="contact-page">
+
+    <!-- SHARED NAVIGATION -->
+    <header id="siteNavbar"></header>
+
+    <main>
+
+        <!-- CONTACT US HERO -->
+        <section class="contact-hero">
+
+            <div class="container">
+
+                <h1>Contact Us</h1>
+
+                <p>
+                    Have a question or feedback?
+                    We'd love to hear from you!
+                </p>
+
+            </div>
+
+        </section>
+
+        <!-- CONTACT CONTENT -->
+        <section class="contact-content">
+
+            <div class="container">
+
+                <div class="contact-grid">
+
+                    <!-- SEND MESSAGE FORM -->
+                    <div class="contact-form-card">
+
+                        <h2>Send us a Message</h2>
+
+                        <form id="feedbackForm">
+
+                            <!-- NAME -->
+                            <div class="contact-field">
+
+                                <label for="contactName">
+                                    Name:
+                                    <span>*</span>
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="contactName"
+                                    name="name"
+                                    placeholder="Enter your full name"
+                                    autocomplete="name"
+                                    maxlength="100"
+                                    required>
+                            </div>
+
+                            <!-- EMAIL -->
+                            <div class="contact-field">
+
+                                <label for="contactEmail">
+                                    Email:
+                                    <span>*</span>
+                                </label>
+
+                                <input
+                                    type="email"
+                                    id="contactEmail"
+                                    name="email"
+                                    placeholder="Enter your email address"
+                                    autocomplete="email"
+                                    maxlength="150"
+                                    required>
+                            </div>
+
+                            <!-- PHONE NUMBER -->
+                            <div class="contact-field">
+
+                                <label for="contactPhone">
+                                    Contact Number:
+                                    (Optional)
+                                </label>
+
+                                <input
+                                    type="tel"
+                                    id="contactPhone"
+                                    name="phone"
+                                    placeholder="09XXXXXXXXX"
+                                    autocomplete="tel"
+                                    pattern="09[0-9]{9}"
+                                    maxlength="11"
+                                    title="Enter 11 digits starting with 09">
+                            </div>
+
+                            <!-- MESSAGE -->
+                            <div class="contact-field">
+
+                                <label for="contactMessage">
+                                    Message:
+                                    <span>*</span>
+                                </label>
+
+                                <textarea
+                                    id="contactMessage"
+                                    name="message"
+                                    placeholder="Write your message here..."
+                                    rows="5"
+                                    maxlength="2000"
+                                    required></textarea>
+
+                            </div>
+
+                            <!-- ERROR MESSAGE -->
+                            <p id="feedbackError"
+                               class="feedback-error"
+                               role="alert"
+                               hidden></p>
+
+                            <!-- SUBMIT BUTTON -->
+                            <button
+                                type="submit"
+                                id="submitFeedbackBtn"
+                                class="submit-feedback-btn">
+
+                                Submit Feedback
+
+                            </button>
+
+                        </form>
+
+                    </div>
+
+                    <!-- RIGHT SIDE CONTENT -->
+                    <div class="contact-info-column">
+
+                        <!-- ANNOUNCEMENTS -->
+                        <div class="contact-info-card">
+
+                            <h2>
+                                Featured Announcements
+                            </h2>
+
+                            <p class="announcement-disclaimer">
+                                Sample project announcements
+                            </p>
+
+                            <!-- ANNOUNCEMENT 1 -->
+                            <div class="announcement">
+
+                                <i class="bi bi-bell"></i>
+
+                                <div>
+
+                                    <h3>
+                                        New Station Launch
+                                    </h3>
+
+                                    <p>
+                                        Read the latest railway updates.
+                                    </p>
+
+                                    <button
+                                        type="button"
+                                        class="announcement-link"
+                                        data-target="launchDetails"
+                                        aria-expanded="false">
+                                        Learn More
+                                    </button>
+
+                                    <p id="launchDetails"
+                                       class="announcement-details"
+                                       hidden>
+                                        Demo announcement only.
+                                        Replace this with verified
+                                        information about a new
+                                        station launch.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+                            <hr>
+
+                            <!-- ANNOUNCEMENT 2 -->
+                            <div class="announcement">
+
+                                <i class="bi bi-calendar-event"></i>
+
+                                <div>
+
+                                    <h3>
+                                        Holiday Schedule Adjustments
+                                    </h3>
+
+                                    <p>
+                                        Stay informed about
+                                        schedule changes.
+                                    </p>
+
+                                    <button
+                                        type="button"
+                                        class="announcement-link"
+                                        data-target="holidayDetails"
+                                        aria-expanded="false">
+                                        Learn More
+                                    </button>
+
+                                    <p id="holidayDetails"
+                                       class="announcement-details"
+                                       hidden>
+                                        Demo announcement only.
+                                        Check official railway
+                                        advisories for actual
+                                        holiday operating hours.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <!-- HELP SECTION -->
+                        <div class="contact-info-card help-card">
+
+                            <h2>We're Here to Help</h2>
+
+                            <p>
+                                Have concerns about your
+                                booking or reservation?
+                                Send us a message using
+                                the feedback form.
+                            </p>
+
+                            <div class="help-email">
+
+                                <i class="bi bi-envelope"></i>
+
+                                <span>
+                                    Reservation inquiries
+                                    and feedback.
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                        <!-- PROJECT PRIVACY GRAPHIC -->
+                        <div class="contact-privacy">
+
+                            <div class="privacy-seal">
+
+                                <i class="bi bi-shield-check"></i>
+
+                                <strong>DPO / DPS</strong>
+
+                                <span>Project Demo</span>
+
+                            </div>
+
+                            <div class="railway-seal">
+
+                                <i class="bi bi-train-front-fill"></i>
+
+                                <strong>RailEasy</strong>
+
+                                <span>Railway Project</span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- FEEDBACK SUCCESS MODAL -->
+    <div id="feedbackModal"
+         class="feedback-modal"
+         hidden>
+
+        <div class="feedback-modal-box"
+             role="dialog"
+             aria-modal="true"
+             aria-labelledby="feedbackTitle"
+             aria-describedby="feedbackDescription">
+
+            <!-- CLOSE BUTTON -->
+            <button
+                type="button"
+                id="closeFeedbackModal"
+                class="feedback-close"
+                aria-label="Close confirmation">
+
+                <i class="bi bi-x-lg"></i>
+
+            </button>
+
+            <!-- SUCCESS ICON -->
+            <div class="feedback-success-icon">
+
+                <i class="bi bi-patch-check-fill"></i>
+
+            </div>
+
+            <h2 id="feedbackTitle">
+                Feedback Submitted!
+            </h2>
+
+            <p id="feedbackDescription">
+                Thank you for reaching out!
+                Your feedback has been saved
+                successfully in this browser.
+            </p>
+
+            <p class="feedback-demo-note">
+                Demo only — no email has been sent.
+            </p>
+
+            <a href="main.html"
+               id="feedbackHomeBtn"
+               class="feedback-home-btn">
+
+                Back to Home
+
+            </a>
+
+        </div>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer id="contact">
+
+        <div class="container">
+
+            <div class="row">
+
+                <!-- CONTACT INFORMATION -->
+                <div class="col-md-8">
+
+                    <h5>Contact Us!</h5>
+
+                    <p>
+                        <i class="bi bi-envelope"></i>
+                        raileasy.help@gmail.com
+                    </p>
+
+                    <p>
+                        <i class="bi bi-telephone"></i>
+                        +63 91234567890
+                    </p>
+
+                </div>
+
+                <!-- QUICK LINKS -->
+                <div class="col-md-4">
+
+                    <h5>Quick Links</h5>
+
+                    <a href="main.html">Home</a>
+
+                    <a href="fare.html">Fare Matrix</a>
+
+                    <a href="about.html">About Us</a>
+
+                    <a href="contact.html">Contact Us</a>
+
+                    <a href="register.html">
+                        Sign In / Register
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div class="copyright">
+
+                &copy;
+                <span id="year"></span>
+                RailEasy. All rights reserved.
+
+            </div>
+
+        </div>
+
+    </footer>
+
+    <!-- JAVASCRIPT -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="contact.js"></script>
+    <script src="nav.js"></script>
+
+</body>
+</html>
