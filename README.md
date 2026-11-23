@@ -1,1 +1,1 @@
-[github.com/gerjinn](https://github.com/gerjinn)
+[https://gerjinn.github.io/RailEasy/]
