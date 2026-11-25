@@ -1,7 +1,3 @@
-/* =================================
-   RAILEASY SIGN IN SYSTEM
-================================= */
-
 const USERS_KEY = "raileasy_users";
 const SESSION_KEY = "raileasy_session";
 
